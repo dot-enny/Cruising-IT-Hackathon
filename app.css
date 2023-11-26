@@ -251,7 +251,7 @@ input[type="search"]::placeholder {
     /* grid-template-rows: repeat(2, 1fr); */
     position: relative;
     transition: ease 0.2s;
-    
+
     .plan-banner__description {
         grid-column: 1 / 5;
         font-size: 13px;
@@ -295,8 +295,10 @@ input[type="search"]::placeholder {
     margin-block: 1.5rem;
 }
 
-.setup-guide__toggle-icon {
+.setup-guide__control {
     cursor: pointer;
+    border: none;
+    background-color: transparent;
 }
 
 .setup-guide__header {

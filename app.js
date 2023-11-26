@@ -1,5 +1,5 @@
 // CREATE STEPS
-const setupSteps = document.querySelector('.setup-steps')
+const setupSteps = document.querySelector('#setup-guide')
 const stepDiv = document.querySelector('.setup-step')
 const stepButton2 = stepDiv.querySelector('.setup-step__button2')
 
@@ -72,14 +72,14 @@ steps.forEach((step, index) => {
 
 
 // TOGGLE VISIBILITY OF SETUP GUIDE 
-const setupGuideToggleIcon = document.querySelector('.setup-guide__toggle-icon')
-setupGuideToggleIcon.addEventListener('click', () => {
+const setupGuideControl = document.querySelector('#setup-guide-control')
+setupGuideControl.addEventListener('click', () => {
     setupSteps.style.transition = 'ease 0.2s';
-    setupGuideToggleIcon.style.transition = 'ease 0.3s'
+    setupGuideControl.style.transition = 'ease 0.3s'
     if (setupSteps.style.opacity != '0') {
         setupSteps.style.transform = 'translateY(-10px)'; 
         setupSteps.style.opacity = '0'; 
-        setupGuideToggleIcon.style.transform = 'rotateX(180deg)'
+        setupGuideControl.style.transform = 'rotateX(180deg)'
         setTimeout(() => {
             setupSteps.style.height = '0';
 
@@ -89,9 +89,16 @@ setupGuideToggleIcon.addEventListener('click', () => {
         setTimeout(() => {
             setupSteps.style.transform = ''; 
             setupSteps.style.opacity = ''; 
-            setupGuideToggleIcon.style.transform = ''
+            setupGuideControl.style.transform = ''
         }, 50);
     }
+
+    const isExpanded = setupGuideControl.attributes['aria-expanded'].value == 'true';
+    if (isExpanded) {
+        setupGuideControl.ariaExpanded = 'false';
+    } else {
+        setupGuideControl.ariaExpanded = 'true';
+    };
 })
 
 /** accordion functionality
@@ -105,7 +112,7 @@ function accord (idx) {
 };
 
 
-/** PROGRESS BAR AND COMPLETED STEPS */
+// PROGRESS BAR AND COMPLETED STEPS 
 const progressInnerBar = document.querySelector('.setup-progress__bar--inner-bar')
 const completedSteps = document.querySelector('.setup-progress__completed-steps')
 const checkBoxes = setupSteps.querySelectorAll('input[type="checkbox"]');
