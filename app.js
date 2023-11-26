@@ -139,24 +139,34 @@ bannerCloseIcon.addEventListener('click', () => {
 })
 
 // TOGGLE NOTIFICATIONS PANEL
-const bellIcon = document.querySelector('.header__bell-icon');
-const notificationsPanel = document.querySelector('.notification-panel');
-bellIcon.addEventListener('click', () => {
-    notificationsPanel.style.transition = 'ease 0.1s';
-    notificationsPanel.classList.toggle('menu--closed');
+const notificationPanelControl = document.querySelector('.header__bell-icon');
+const notificationPanel = document.querySelector('#notification-panel');
+notificationPanelControl.addEventListener('click', () => {
+    // close profile menu and open notification panel
+    profileMenu.classList.add('menu--closed');
+    notificationPanel.classList.toggle('menu--closed');
+    const isExpanded = notificationPanelControl.attributes['aria-expanded'].value;
+    if (isExpanded == 'true') {
+        notificationPanelControl.attributes['aria-expanded'].value = 'false';
+    } else {
+        notificationPanelControl.attributes['aria-expanded'].value  = 'true';
+    };
+
+    
 })
 
 // TOGGLE POPOVER MENU
 const avatar = document.querySelector('.header__badge');
-const menu = document.querySelector('menu');
+const profileMenu = document.querySelector('#profile-menu');
 avatar.addEventListener('click', () => {
-    menu.style.transition = 'ease 0.1s';
-    menu.classList.toggle('menu--closed');
+    // close notification panel and open profile menu
+    notificationPanel.classList.add('menu--closed');
+    profileMenu.classList.toggle('menu--closed');
 })
 
 
 // SECOND MENU LIST ITEMS
-const menuSecondList = menu.querySelector('.menu__second-list')
+const menuSecondList = profileMenu.querySelector('.menu__second-list')
 const menuSecondListItems = ['Help Center', 'Changelog', 'Community forums', 'Hire a Shopify Partner', 'Keyboard shortcuts']
 
 menuSecondListItems.forEach(item => {

@@ -64,6 +64,7 @@ header {
     border-radius: 14px;
     border: 1px solid var(--stroke-s-50, #DBDBDB);
     box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.05);
+    transition: ease 0.1s;
 }
 
 /* NOTIFICATION PANEL */
@@ -158,6 +159,10 @@ input[type="search"]::placeholder {
 }
 
 .header__bell-icon {
+    background-color: transparent;
+    width: 32px;
+    height: 32px;
+    border: none;
     margin-left: auto;
     margin-right: 1%;
 }
@@ -169,6 +174,7 @@ input[type="search"]::placeholder {
     display: flex;
     align-items: center;
     border-radius: var(--br-sm);
+    cursor: pointer;
 }
 
 .header__badge--name {
@@ -499,9 +505,10 @@ input[type="checkbox"]:checked+span>svg:nth-of-type(10) {
     .header__bell-icon {
         background-color: var(--grey-g2);
         border-radius: var(--br-sm);
-        padding: 0.3rem;
-        width: 30px;
-        height: 30px;
+        width: 32px;
+        height: 32px;
+        border: none;
+        cursor: pointer;
     }
 
     .search-bar-container {
