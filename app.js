@@ -129,7 +129,7 @@ checkBoxes.forEach((checkbox, index) => {
     })
 });
 
-/** CLOSE BANNER */
+// CLOSE BANNER 
 const banner = document.querySelector('.plan-banner');
 const bannerCloseIcon = document.querySelector('.plan-banner__close-icon');
 
@@ -142,6 +142,16 @@ bannerCloseIcon.addEventListener('click', () => {
     }, 100);
 })
 
+// SECOND MENU LIST ITEMS
+const menu = document.querySelector('menu')
+const menuSecondList = menu.querySelector('.menu__second-list')
+const menuSecondListItems = ['Help Center', 'Changelog', 'Community forums', 'Hire a Shopify Partner', 'Keyboard shortcuts']
+
+menuSecondListItems.forEach(item => {
+    let listItem = document.createElement('li')
+    listItem.innerText = item;
+    menuSecondList.appendChild(listItem)
+})
 
 
 
