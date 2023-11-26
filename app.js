@@ -142,8 +142,16 @@ bannerCloseIcon.addEventListener('click', () => {
     }, 100);
 })
 
+// TOGGLE POPOVER MENU
+const avatar = document.querySelector('.header__badge');
+const menu = document.querySelector('menu');
+avatar.addEventListener('click', () => {
+    menu.style.transition = 'ease 0.1s';
+    menu.classList.toggle('menu--closed');
+})
+
+
 // SECOND MENU LIST ITEMS
-const menu = document.querySelector('menu')
 const menuSecondList = menu.querySelector('.menu__second-list')
 const menuSecondListItems = ['Help Center', 'Changelog', 'Community forums', 'Hire a Shopify Partner', 'Keyboard shortcuts']
 

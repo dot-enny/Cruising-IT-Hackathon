@@ -100,6 +100,9 @@ menu {
         margin-left: auto;
     }
 }
+.menu--closed {
+    transform: scaleY(0);
+}
 
 
 .search-bar-container {
@@ -144,7 +147,7 @@ input[type="search"]::placeholder {
     padding: 0.5rem 0.8rem;
 }
 
-.header__badge--avatar, .menu__badge-avatar {
+.header__badge-avatar, .menu__badge-avatar {
     background-color: #36FBA1;
     color: #00000066;
     padding: 0.4rem;
