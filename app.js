@@ -132,14 +132,10 @@ checkBoxes.forEach((checkbox, index) => {
 // CLOSE BANNER 
 const banner = document.querySelector('.plan-banner');
 const bannerCloseIcon = document.querySelector('.plan-banner__close-icon');
-
 bannerCloseIcon.addEventListener('click', () => {
     document.body.style.transition = 'ease 0.3s';
     banner.style.transition = 'ease 0.2s';
-    banner.style.scale = '0'
-    setTimeout(() => {
-        banner.style.display = 'none'
-    }, 100);
+    banner.style.scale = '0'  
 })
 
 // TOGGLE NOTIFICATIONS PANEL
