@@ -139,29 +139,39 @@ bannerCloseIcon.addEventListener('click', () => {
 })
 
 // TOGGLE NOTIFICATIONS PANEL
-const notificationPanelControl = document.querySelector('.header__bell-icon');
+const notificationPanelControl = document.querySelector('#notification-panel-control');
 const notificationPanel = document.querySelector('#notification-panel');
 notificationPanelControl.addEventListener('click', () => {
     // close profile menu and open notification panel
     profileMenu.classList.add('menu--closed');
+    profileMenuControl.classList.remove('header__badge--active');
     notificationPanel.classList.toggle('menu--closed');
+    notificationPanelControl.classList.toggle('notification-panel__control--active')
     const isExpanded = notificationPanelControl.attributes['aria-expanded'].value;
     if (isExpanded == 'true') {
         notificationPanelControl.attributes['aria-expanded'].value = 'false';
     } else {
         notificationPanelControl.attributes['aria-expanded'].value  = 'true';
     };
-
-    
 })
 
 // TOGGLE POPOVER MENU
-const avatar = document.querySelector('.header__badge');
+const profileMenuControl = document.querySelector('.header__badge');
 const profileMenu = document.querySelector('#profile-menu');
-avatar.addEventListener('click', () => {
+profileMenuControl.addEventListener('click', () => {
     // close notification panel and open profile menu
     notificationPanel.classList.add('menu--closed');
+    notificationPanelControl.classList.remove('notification-panel__control--active')
     profileMenu.classList.toggle('menu--closed');
+    profileMenuControl.classList.toggle('header__badge--active');
+    const isExpanded = profileMenuControl.attributes['aria-expanded'].value;
+    if (isExpanded == 'true') {
+        profileMenuControl.attributes['aria-expanded'].value = 'false';
+    } else {
+        profileMenuControl.attributes['aria-expanded'].value  = 'true';
+    };
+
+
 })
 
 
@@ -170,10 +180,15 @@ const menuSecondList = profileMenu.querySelector('.menu__second-list')
 const menuSecondListItems = ['Help Center', 'Changelog', 'Community forums', 'Hire a Shopify Partner', 'Keyboard shortcuts']
 
 menuSecondListItems.forEach(item => {
-    let listItem = document.createElement('li')
-    listItem.innerText = item;
-    menuSecondList.appendChild(listItem)
-})
+    let listItem = document.createElement('li'); 
+    let buttonItem = document.createElement('button');
+
+    buttonItem.innerText = item;
+    buttonItem.setAttribute('role', 'menuitem');
+
+    listItem.appendChild(buttonItem);
+    menuSecondList.appendChild(listItem);
+});
 
 
 
