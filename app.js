@@ -71,7 +71,7 @@ steps.forEach((step, index) => {
 });
 
 
-/** TOGGLE VISIBILITY OF SETUP GUIDE */
+// TOGGLE VISIBILITY OF SETUP GUIDE 
 const setupGuideToggleIcon = document.querySelector('.setup-guide__toggle-icon')
 setupGuideToggleIcon.addEventListener('click', () => {
     setupSteps.style.transition = 'ease 0.2s';
@@ -147,11 +147,12 @@ notificationPanelControl.addEventListener('click', () => {
     profileMenuControl.classList.remove('header__badge--active');
     notificationPanel.classList.toggle('menu--closed');
     notificationPanelControl.classList.toggle('notification-panel__control--active')
-    const isExpanded = notificationPanelControl.attributes['aria-expanded'].value;
-    if (isExpanded == 'true') {
-        notificationPanelControl.attributes['aria-expanded'].value = 'false';
+    profileMenuControl.ariaExpanded = 'false';
+    const isExpanded = notificationPanelControl.attributes['aria-expanded'].value == 'true';
+    if (isExpanded) {
+        notificationPanelControl.ariaExpanded = 'false';
     } else {
-        notificationPanelControl.attributes['aria-expanded'].value  = 'true';
+        notificationPanelControl.ariaExpanded = 'true';
     };
 })
 
@@ -164,14 +165,17 @@ profileMenuControl.addEventListener('click', () => {
     notificationPanelControl.classList.remove('notification-panel__control--active')
     profileMenu.classList.toggle('menu--closed');
     profileMenuControl.classList.toggle('header__badge--active');
-    const isExpanded = profileMenuControl.attributes['aria-expanded'].value;
-    if (isExpanded == 'true') {
-        profileMenuControl.attributes['aria-expanded'].value = 'false';
+    notificationPanelControl.ariaExpanded = 'false';
+    const isExpanded = profileMenuControl.attributes['aria-expanded'].value == 'true';
+    if (isExpanded) {
+        profileMenuControl.ariaExpanded = 'false';
     } else {
-        profileMenuControl.attributes['aria-expanded'].value  = 'true';
+        profileMenuControl.ariaExpanded  = 'true';
     };
+})
 
-
+notificationPanel.addEventListener('', () => {
+    console.log('co')
 })
 
 
