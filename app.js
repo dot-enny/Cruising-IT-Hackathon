@@ -93,12 +93,8 @@ setupGuideControl.addEventListener('click', () => {
         }, 50);
     }
 
-    const isExpanded = setupGuideControl.attributes['aria-expanded'].value == 'true';
-    if (isExpanded) {
-        setupGuideControl.ariaExpanded = 'false';
-    } else {
-        setupGuideControl.ariaExpanded = 'true';
-    };
+    const isExpanded = setupGuideControl.getAttribute('aria-expanded') === 'true';
+    setupGuideControl.setAttribute('aria-expanded', isExpanded ? 'false' : 'true');
 })
 
 /** accordion functionality
@@ -166,12 +162,9 @@ notificationPanelControl.addEventListener('click', () => {
     notificationPanel.classList.toggle('menu--closed');
     notificationPanelControl.classList.toggle('notification-panel__control--active')
     profileMenuControl.ariaExpanded = 'false';
-    const isExpanded = notificationPanelControl.attributes['aria-expanded'].value == 'true';
-    if (isExpanded) {
-        notificationPanelControl.ariaExpanded = 'false';
-    } else {
-        notificationPanelControl.ariaExpanded = 'true';
-    };
+    
+    const isExpanded = notificationPanelControl.getAttribute('aria-expanded') === 'true';
+    notificationPanelControl.setAttribute('aria-expanded', isExpanded ? 'false' : 'true');
 })
 
 
@@ -180,6 +173,7 @@ notificationPanelControl.addEventListener('click', () => {
 // all menu items
 const profileMenu = document.querySelector('#profile-menu');
 const allMenuItems = profileMenu.querySelectorAll('[role="menuitem"]');
+
 allMenuItems.forEach(item => {
     item.addEventListener('click', () => {
         window.location.href = 'https://admin.shopify.com'
@@ -212,14 +206,10 @@ profileMenuControl.addEventListener('click', () => {
     profileMenu.classList.toggle('menu--closed');
     profileMenuControl.classList.toggle('header__badge--active');
     notificationPanelControl.ariaExpanded = 'false';
-    const isExpanded = profileMenuControl.attributes['aria-expanded'].value == 'true';
-    if (isExpanded) {
-        profileMenuControl.ariaExpanded = 'false';
-        profileMenuControl.focus()
-    } else {
-        profileMenuControl.ariaExpanded  = 'true';
-        allMenuItems.item(0).focus()
-    };
+    
+    const isExpanded = profileMenuControl.getAttribute('aria-expanded') === 'true';
+    profileMenuControl.setAttribute('aria-expanded', isExpanded ? 'false' : 'true');
+    isExpanded ? allMenuItems.item(0).focus() : profileMenuControl.focus()
 })
 
 
