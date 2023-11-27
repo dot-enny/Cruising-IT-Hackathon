@@ -176,11 +176,31 @@ function closeNoticationPanel (e) {
 const profileMenu = document.querySelector('#profile-menu');
 const allMenuItems = profileMenu.querySelectorAll('[role="menuitem"]');
 
-allMenuItems.forEach(item => {
-    item.addEventListener('click', () => {
-        window.location.href = 'https://admin.shopify.com'
-    })
-})
+allMenuItems.forEach((item, index) => {
+    item.addEventListener('click', () => window.location.href = 'https://admin.shopify.com');
+    item.addEventListener('keyup', (e) => handleMenuItemArrowKeyPress(e, index));
+});
+function handleMenuItemArrowKeyPress (e, index) {
+    const isLastMenuItem = index == allMenuItems.length - 1;
+    const isFirstMenuItem = index == 0;
+    const nextMenuItem = allMenuItems.item(index + 1);
+    const prevMenuItem = allMenuItems.item(index - 1);
+    if (e.key == 'ArrowRight' || e.key == 'ArrowDown') {
+        if (isLastMenuItem) {
+            allMenuItems.item(0).focus();
+        } else {
+            nextMenuItem.focus()
+        };
+    };
+    
+    if (e.key == 'ArrowLeft' || e.key == 'ArrowUp') {
+        if (isFirstMenuItem) {
+            allMenuItems.item(allMenuItems.length - 1).focus();
+        } else {
+            prevMenuItem.focus();
+        };
+    };
+};
 
 // toggle profile menu
 const profileMenuControl = document.querySelector('#profile-menu-control');
