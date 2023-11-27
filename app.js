@@ -76,22 +76,9 @@ const setupGuideControl = document.querySelector('#setup-guide-control')
 setupGuideControl.addEventListener('click', () => {
     setupSteps.style.transition = 'ease 0.2s';
     setupGuideControl.style.transition = 'ease 0.3s'
-    if (setupSteps.style.opacity != '0') {
-        setupSteps.style.transform = 'translateY(-10px)'; 
-        setupSteps.style.opacity = '0'; 
-        setupGuideControl.style.transform = 'rotateX(180deg)'
-        setTimeout(() => {
-            setupSteps.style.height = '0';
-
-        }, 50);
-    } else {
-        setupSteps.style.height = '';
-        setTimeout(() => {
-            setupSteps.style.transform = ''; 
-            setupSteps.style.opacity = ''; 
-            setupGuideControl.style.transform = ''
-        }, 50);
-    }
+  
+    setupSteps.classList.toggle('setup-guide--closed');
+    setupGuideControl.classList.toggle('setup-guide__control--closed')
 
     const isExpanded = setupGuideControl.getAttribute('aria-expanded') === 'true';
     setupGuideControl.setAttribute('aria-expanded', isExpanded ? 'false' : 'true');

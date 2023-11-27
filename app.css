@@ -296,12 +296,25 @@ input[type="search"]::placeholder {
     max-width: 100dvw;
     margin: 0 auto;
     margin-block: 1.5rem;
+    transition: ease 0.2s;
+}
+
+.setup-guide--closed {
+    transition: ease 0.2s;
+    transform: translateY(-10px);
+    opacity: 0;
+    height: 0;
 }
 
 .setup-guide__control {
     cursor: pointer;
     border: none;
     background-color: transparent;
+    transition: ease 0.3s;
+}
+.setup-guide__control--closed {
+    transition: ease 0.3s;
+    transform: rotateZ(180deg);
 }
 
 .setup-guide__header {
