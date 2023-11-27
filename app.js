@@ -139,6 +139,10 @@ checkBoxes.forEach((checkbox, index) => {
 // CLOSE BANNER 
 const banner = document.querySelector('#banner');
 const bannerCloseIcon = document.querySelector('#banner-close-button');
+const selectPlanButton = banner.querySelector('#select-plan');
+selectPlanButton.addEventListener('click', () => {
+    window.location.href = 'https://shopify.com/pricing'
+})
 bannerCloseIcon.addEventListener('click', () => {
     banner.classList.add('plan-banner--closed');
 })
@@ -161,9 +165,37 @@ notificationPanelControl.addEventListener('click', () => {
     };
 })
 
-// TOGGLE POPOVER MENU
-const profileMenuControl = document.querySelector('.header__badge');
+
+// PROFILE MENU
+
+// all menu items
 const profileMenu = document.querySelector('#profile-menu');
+const allMenuItems = profileMenu.querySelectorAll('[role="menuitem"]');
+allMenuItems.forEach(item => {
+    item.addEventListener('click', () => {
+        window.location.href = 'https://admin.shopify.com'
+    })
+})
+
+// second menu list items
+const menuSecondList = profileMenu.querySelector('.menu__second-list')
+const menuSecondListItems = ['Help Center', 'Changelog', 'Community forums', 'Hire a Shopify Partner', 'Keyboard shortcuts']
+menuSecondListItems.forEach(item => {
+    let listItem = document.createElement('li'); 
+    let buttonItem = document.createElement('button');
+
+    buttonItem.innerText = item;
+    buttonItem.setAttribute('role', 'menuitem');
+
+    listItem.appendChild(buttonItem);
+    menuSecondList.appendChild(listItem);
+    listItem.addEventListener('click', () => {
+        window.location.href = 'https://admin.shopify.com'
+    })
+});
+
+// toggle popover menu
+const profileMenuControl = document.querySelector('.header__badge');
 profileMenuControl.addEventListener('click', () => {
     // close notification panel and open profile menu
     notificationPanel.classList.add('menu--closed');
@@ -174,30 +206,12 @@ profileMenuControl.addEventListener('click', () => {
     const isExpanded = profileMenuControl.attributes['aria-expanded'].value == 'true';
     if (isExpanded) {
         profileMenuControl.ariaExpanded = 'false';
+        profileMenuControl.focus()
     } else {
         profileMenuControl.ariaExpanded  = 'true';
+        allMenuItems.item(0).focus()
     };
 })
-
-notificationPanel.addEventListener('', () => {
-    console.log('co')
-})
-
-
-// SECOND MENU LIST ITEMS
-const menuSecondList = profileMenu.querySelector('.menu__second-list')
-const menuSecondListItems = ['Help Center', 'Changelog', 'Community forums', 'Hire a Shopify Partner', 'Keyboard shortcuts']
-
-menuSecondListItems.forEach(item => {
-    let listItem = document.createElement('li'); 
-    let buttonItem = document.createElement('button');
-
-    buttonItem.innerText = item;
-    buttonItem.setAttribute('role', 'menuitem');
-
-    listItem.appendChild(buttonItem);
-    menuSecondList.appendChild(listItem);
-});
 
 
 

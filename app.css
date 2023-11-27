@@ -114,20 +114,20 @@ menu {
     & ul {
         padding: 0rem 0.375rem;
         margin: 0.2rem 0;
-        & li:first-child {
-        }
+        list-style: none;
     }
     & li {
-        display: flex;
-        align-items: center;
         font-size: 0.8125rem;
         padding: 0.375rem;
         border-radius: var(--br-sm);
         cursor: pointer;
         & button {
+            display: flex;
+            align-items: center;
             border: none;
             background-color: transparent;
             cursor: pointer;
+            width: 100%;
         }
         &:hover {
             background-color: var(--background);
@@ -269,6 +269,9 @@ input[type="search"]::placeholder {
         grid-column: span 2;
         font-weight: 600;
         border: none;
+        & a {
+            text-decoration: none;
+        }
     }
     & .plan-banner__close-button {
         grid-column: 5 / 6;
