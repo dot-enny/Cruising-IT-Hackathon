@@ -109,6 +109,7 @@ function accord (idx) {
         if (index != idx) stepTemplate.classList.add('setup-step--closed');
     })
     stepTemplates[idx].classList.remove('setup-step--closed');
+    console.log(idx)
 };
 
 
@@ -121,13 +122,21 @@ checkBoxes.forEach((checkbox, index) => {
     checkbox.addEventListener('change', (e) => {
         if (e.target.checked) {
             progress++;
-            if (index != checkBoxes.length -1) {
-                let accordIdx = index + 1;
-                // check if neighbor step is checked then move to next incomplete step
-                while(checkBoxes[accordIdx].checked) accordIdx++;
-                accord(accordIdx);
-            } 
+            // accordIdx is index to be passed to accord function
+            let accordIdx = index;
+            // iterate all steps while box currently being iterated is checked, this moves to the next incomplete step
+            // if index is that of the last checkbox, increasing accordIdx in order to move to next box would give an undefined index, reset accordIdx to 0 to start from top
+            // if accordIdx equals current index during iteration break loop to avoid infinite loop because all checkboxes have been checked
+            while(checkBoxes[accordIdx].checked) {
+                accordIdx < 4 ? ++accordIdx : accordIdx = 0;
+                if (accordIdx == index) break;
+            }
+            // if accordIdx equals index after exiting loop, all steps are completed, close final step
+            if (accordIdx == index) stepTemplates[index].classList.add('setup-step--closed')
+            // else open next incomplete step
+            else accord(accordIdx);
         } else {
+            // when checkbox is unchecked, reopen unchecked step
             progress--;
             accord(index);
         }
