@@ -433,7 +433,7 @@ input[type="search"]::placeholder {
     display: none;
 }
 
-.setup-step--closed .setup-step__button {
+.setup-step--closed button {
     display: none;
 }
 

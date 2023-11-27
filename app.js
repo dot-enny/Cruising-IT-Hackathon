@@ -46,6 +46,9 @@ let stepTemplates = [];
 steps.forEach((step, index) => { 
     // create step node
     const stepTemplate = stepDiv.cloneNode(true);    
+    if (!step.action2) {
+        stepTemplate.querySelector('.setup-step__button2').style.display = 'none';
+    }
     const stepTitle = stepTemplate.querySelector('.setup-step__title');
     const stepDescriptionParagraph = stepTemplate.querySelector('.setup-step__description p');
     const stepButton = stepTemplate.querySelector('.setup-step__button');
