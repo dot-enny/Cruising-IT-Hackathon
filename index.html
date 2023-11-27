@@ -51,9 +51,9 @@
     </button>
 
     <!-- profile menu controls -->
-    <button class="header__badge" aria-haspopup="true" aria-expanded="false" aria-controls="profile-menu" aria-label="profile-menu">
-      <span class="desktop header__badge--name">Davii Collections</span>
-      <span class="header__badge-avatar">DC</sp>
+    <button id="profile-menu-control" class="profile-menu-control" aria-haspopup="true" aria-expanded="false" aria-controls="profile-menu" aria-label="profile-menu">
+      <span class="desktop profile-menu-control--name">Davii Collections</span>
+      <span class="profile-menu-control-avatar">DC</sp>
     </button>
     
     <!-- NOTIFICATIONS PANEL -->
@@ -96,7 +96,11 @@
       </ul>
       <div class="menu__divider"></div>
       <ul class="menu__second-list">
-        <!-- rendered with js -->
+        <li><button role="menuitem">Help Center</button></li>
+        <li><button role="menuitem">Changelog</button></li>
+        <li><button role="menuitem">Community forums</button></li>
+        <li><button role="menuitem">Hire a Shopify Partner</button></li>
+        <li><button role="menuitem">Keyboard shortcuts</button></li>
       </ul>
       <div class="menu__divider"></div>
       <ul class="menu__third-list">
@@ -104,12 +108,8 @@
           <span class="menu__third-list-name">David Michael</span>
           <span class="menu__third-list-email">davidmichael@gmail.com</span>
         </li>
-        <li>
-          <button role="menuitem">Manage Account</button>
-        </li>
-        <li>
-          <button role="menuitem">Log out</button>
-        </li>
+        <li><button role="menuitem">Manage Account</button></li>
+        <li><button role="menuitem">Log out</button></li>
       </ul>
     </menu>
 

@@ -148,7 +148,7 @@ const notificationPanel = document.querySelector('#notification-panel');
 notificationPanelControl.addEventListener('click', () => {
     // close profile menu and open notification panel
     profileMenu.classList.add('menu--closed');
-    profileMenuControl.classList.remove('header__badge--active');
+    profileMenuControl.classList.remove('profile-menu-control--active');
     notificationPanel.classList.toggle('menu--closed');
     notificationPanelControl.classList.toggle('notification-panel__control--active')
     profileMenuControl.ariaExpanded = 'false';
@@ -170,38 +170,34 @@ allMenuItems.forEach(item => {
     })
 })
 
-// second menu list items
-const menuSecondList = profileMenu.querySelector('.menu__second-list')
-const menuSecondListItems = ['Help Center', 'Changelog', 'Community forums', 'Hire a Shopify Partner', 'Keyboard shortcuts']
-menuSecondListItems.forEach(item => {
-    let listItem = document.createElement('li'); 
-    let buttonItem = document.createElement('button');
-
-    buttonItem.innerText = item;
-    buttonItem.setAttribute('role', 'menuitem');
-
-    listItem.appendChild(buttonItem);
-    menuSecondList.appendChild(listItem);
-    listItem.addEventListener('click', () => {
-        window.location.href = 'https://admin.shopify.com'
-    })
+// toggle profile menu
+const profileMenuControl = document.querySelector('#profile-menu-control');
+profileMenuControl.addEventListener('click', () => {
+   toggleProfileMenu();
+})
+profileMenuControl.addEventListener('keyup', (e) => {
+    closeProfileMenu(e);
+});
+profileMenu.addEventListener('keyup', (e) => {
+    closeProfileMenu(e);
 });
 
-// toggle popover menu
-const profileMenuControl = document.querySelector('.header__badge');
-profileMenuControl.addEventListener('click', () => {
+function toggleProfileMenu () {
     // close notification panel and open profile menu
     notificationPanel.classList.add('menu--closed');
     notificationPanelControl.classList.remove('notification-panel__control--active')
     profileMenu.classList.toggle('menu--closed');
-    profileMenuControl.classList.toggle('header__badge--active');
+    profileMenuControl.classList.toggle('profile-menu-control--active');
     notificationPanelControl.ariaExpanded = 'false';
     
     const isExpanded = profileMenuControl.getAttribute('aria-expanded') === 'true';
     profileMenuControl.setAttribute('aria-expanded', isExpanded ? 'false' : 'true');
-    isExpanded ? allMenuItems.item(0).focus() : profileMenuControl.focus()
-})
+    // isExpanded ? allMenuItems.item(0).focus() : profileMenuControl.focus();
+}
 
-
-
-
+function closeProfileMenu (e) {
+    if (e.key == 'Escape') {
+        profileMenu.classList.add('menu--closed')
+        profileMenuControl.focus()
+    };
+}

@@ -211,7 +211,7 @@ input[type="search"]::placeholder {
     font-weight: 500;
 }
 
-.header__badge {
+.profile-menu-control {
     background-color: var(--grey-g2);
     color: #FFF;
     font-size: var(--size-12);
@@ -222,15 +222,15 @@ input[type="search"]::placeholder {
     cursor: pointer;
     transition: ease 0.4s;
 }
-.header__badge--active {
+.profile-menu-control--active {
     background-color: #656266;
 }
 
-.header__badge--name {
+.profile-menu-control--name {
     padding: 0.5rem 0.8rem;
 }
 
-.header__badge-avatar, .menu__badge-avatar {
+.profile-menu-control-avatar, .menu__badge-avatar {
     background-color: #36FBA1;
     color: #00000066;
     padding: 0.4rem;
