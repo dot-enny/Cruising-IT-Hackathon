@@ -146,6 +146,12 @@ bannerCloseIcon.addEventListener('click', () => {
 const notificationPanelControl = document.querySelector('#notification-panel-control');
 const notificationPanel = document.querySelector('#notification-panel');
 notificationPanelControl.addEventListener('click', () => {
+  toggleNotificationPanel();
+});
+notificationPanelControl.addEventListener('keyup', (e) => {
+    closeNoticationPanel(e);
+});
+function toggleNotificationPanel () {
     // close profile menu and open notification panel
     profileMenu.classList.add('menu--closed');
     profileMenuControl.classList.remove('profile-menu-control--active');
@@ -155,7 +161,13 @@ notificationPanelControl.addEventListener('click', () => {
     
     const isExpanded = notificationPanelControl.getAttribute('aria-expanded') === 'true';
     notificationPanelControl.setAttribute('aria-expanded', isExpanded ? 'false' : 'true');
-})
+};
+function closeNoticationPanel (e) {
+    if (e.key == 'Escape') {
+        notificationPanel.classList.add('menu--closed')
+        notificationPanelControl.focus()
+    };
+};
 
 
 // PROFILE MENU
