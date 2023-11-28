@@ -340,7 +340,6 @@ menu {
         justify-content: space-between;
         color: var(--font-dark);
         padding: 8px;
-        margin-bottom: 16px;
     }
     .setup-guide__header--title {
         font-size: var(--size-14);
@@ -363,6 +362,11 @@ menu {
         transition: ease 0.3s;
         align-self: start;
         margin-top: 4px;
+    }
+    .setup-steps {
+        & li:first-child {
+            margin-top: 16px;
+        }
     }
 }
 
@@ -506,10 +510,6 @@ input[type="checkbox"] {
     background-color: var(--white);
 }
 
-.setup-step--closed .setup-step__description-container {
-    row-gap: 0;
-}
-
 .setup-step--closed .setup-step__description,
 .setup-step--closed button:not(.checkbox-button),
 .setup-step--closed .setup-step__image {
@@ -563,6 +563,7 @@ input[type="checkbox"] {
     }
     .trial-callout__close-button {
         padding-right: 8px;
+        outline-offset: 0 -8px 0 0;
     }
 }
 
