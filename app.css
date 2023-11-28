@@ -485,7 +485,9 @@ menu {
         &:focus .not-completed-icon circle, &:hover .not-completed-icon circle {
             stroke-dasharray: 0 0;
         }
-        
+        &:focus .not-completed-icon circle {
+            fill: #D9D9D9;
+        }
         .loading-spinner-icon {
             animation: spin 1s linear none infinite;
             animation-duration: 0.3s;
