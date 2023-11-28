@@ -282,7 +282,7 @@ menu {
 }
 
 /* SELECT PLAN BANNER */
-.plan-banner {
+.trial-callout {
     background-color: #1A1A1A;
     color: var(--font-light);
     font-size: var(--size-13);
@@ -295,12 +295,12 @@ menu {
     position: relative;
     transition: ease 0.2s;
 
-    .plan-banner__description {
+    .trial-callout__description {
         grid-column: 1 / 5;
         font-size: 13px;
         font-weight: 500;
     }
-    & .plan-banner__select-button {
+    & .trial-callout__select-button {
         background-color: var(--white);
         color: #323232;
         font-size: var(--size-14);
@@ -316,7 +316,7 @@ menu {
             text-decoration: none;
         }
     }
-    & .plan-banner__close-button {
+    & .trial-callout__close-button {
         grid-column: 5 / 6;
         grid-row: 1 / 2;
         margin: auto;
@@ -327,7 +327,7 @@ menu {
         border: none;
     }
 }
-.plan-banner--closed {
+.trial-callout--closed {
     transform: scale(0);
     visibility: hidden;
 }
@@ -597,19 +597,19 @@ input[type="checkbox"] {
         width: clamp(5rem, 40dvw, 100rem);
     }
 
-    .plan-banner {
+    .trial-callout {
         display: flex;
         align-items: center;
         max-width: 800px;
         margin: 2rem auto 1rem;
         border-radius: 8px;
         padding: 0.75rem 0.5rem 0.75rem 1rem;
-        .plan-banner__select-button {
+        .trial-callout__select-button {
             margin-left: auto;
             margin-right: 1rem;
             margin-top: 0;
         }
-        & .plan-banner__close-button {
+        & .trial-callout__close-button {
             position: static;
             margin: 0;
         }

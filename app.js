@@ -149,7 +149,7 @@ selectPlanButton.addEventListener('click', () => {
     window.location.href = 'https://shopify.com/pricing'
 })
 bannerCloseIcon.addEventListener('click', () => {
-    banner.classList.add('plan-banner--closed');
+    banner.classList.add('trial-callout--closed');
 })
 
 // TOGGLE NOTIFICATIONS PANEL
@@ -192,7 +192,7 @@ const profileMenu = document.querySelector('#profile-menu');
 const allMenuItems = profileMenu.querySelectorAll('[role="menuitem"]');
 
 allMenuItems.forEach((item, index) => {
-    item.addEventListener('click', () => window.location.href = 'https://admin.shopify.com');
+    // item.addEventListener('click', () => window.location.href = 'https://admin.shopify.com');
     item.addEventListener('keyup', (e) => handleMenuItemArrowKeyPress(e, index));
 });
 function handleMenuItemArrowKeyPress (e, index) {
