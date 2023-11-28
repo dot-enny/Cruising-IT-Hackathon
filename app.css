@@ -329,10 +329,10 @@ menu {
 
 .setup-guide {
     background-color: var(--white);
-    padding: clamp(1rem, 1.5dvw, 2rem) clamp(0.5rem, 1dvw, 1rem);
+    padding: 8px;
     max-width: 100dvw;
     margin: 0 auto;
-    margin-block: 1.5rem;
+    margin-top: 16px;
     transition: ease 0.2s;
 }
 
@@ -348,6 +348,8 @@ menu {
     border: none;
     background-color: transparent;
     transition: ease 0.3s;
+    align-self: start;
+    margin-top: 4px;
 }
 .setup-guide__control--closed {
     transition: ease 0.3s;
@@ -358,25 +360,28 @@ menu {
     display: flex;
     justify-content: space-between;
     color: var(--font-dark);
-    margin-bottom: 1rem;
+    padding: 8px;
+    margin-bottom: 16px;
 }
-
 .setup-guide__header--title {
     font-size: var(--size-14);
     font-weight: 600;
-    margin-bottom: 0.4rem;
+    line-height: 140%;
+    margin-bottom: 4px;
 }
 
 .setup-guide__header--description {
     font-size: var(--size-13);
     font-weight: 400;
+    line-height: 140%;
+    margin-bottom: 16px;
 }
 
 .setup-progress {
     display: flex;
     align-items: center;
-    /* margin-block: 1rem; */
     transition: ease 0.5s;
+    line-height: 130%;
 }
 
 .setup-progress__label {
