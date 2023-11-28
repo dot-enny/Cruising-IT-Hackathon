@@ -95,40 +95,50 @@ function accord (idx) {
         if (index != idx) stepTemplate.classList.add('setup-step--closed');
     })
     stepTemplates[idx].classList.remove('setup-step--closed');
-    console.log(idx)
 };
 
 
 // PROGRESS BAR AND COMPLETED STEPS 
 const progressInnerBar = document.querySelector('.setup-progress__bar--inner-bar')
 const completedSteps = document.querySelector('.setup-progress__completed-steps')
+const checkBoxButtons = setupSteps.querySelectorAll('#checkbox-button');
 const checkBoxes = setupSteps.querySelectorAll('input[type="checkbox"]');
 let progress = 0;
-checkBoxes.forEach((checkbox, index) => {
-    checkbox.addEventListener('change', (e) => {
-        if (e.target.checked) {
+checkBoxButtons.forEach((checkBoxButton, index) => {
+    const notCompletedIcon = checkBoxButton.querySelector('#not-completed-icon');
+    const loadingSpinnerIcon = checkBoxButton.querySelector('#loading-spinner-icon');
+    const completedIcon = checkBoxButton.querySelector('#completed-icon');
+    const icons = [notCompletedIcon, loadingSpinnerIcon, completedIcon];
+    const checkbox = checkBoxButton.querySelector('input[type="checkbox"]');
+    checkBoxButton.addEventListener('click', () => {
+        checkbox.checked = !checkbox.checked 
+        if (checkbox.checked) {
             progress++;
-            // accordIdx is index to be passed to accord function
-            let accordIdx = index;
-            // iterate all steps while box currently being iterated is checked, this moves to the next incomplete step
-            // if index is that of the last checkbox, increasing accordIdx in order to move to next box would give an undefined index, reset accordIdx to 0 to start from top
-            // if accordIdx equals current index during iteration break loop to avoid infinite loop because all checkboxes have been checked
-            while(checkBoxes[accordIdx].checked) {
-                accordIdx < 4 ? ++accordIdx : accordIdx = 0;
-                if (accordIdx == index) break;
-            }
-            // if accordIdx equals index after exiting loop, all steps are completed, close final step
-            if (accordIdx == index) stepTemplates[index].classList.add('setup-step--closed')
-            // else open next incomplete step
-            else accord(accordIdx);
+            handleMarkAsDone(...icons).then(() => {
+                // accordIdx is index to be passed to accord function
+                let accordIdx = index;
+                // iterate all steps while box currently being iterated is checked, this moves to the next incomplete step
+                // if index is that of the last checkbox, increasing accordIdx in order to move to next box would give an undefined index, reset accordIdx to 0 to start from top
+                // if accordIdx equals current index during iteration break loop to avoid infinite loop because all checkboxes have been checked
+                while(checkBoxes[accordIdx].checked) {
+                    accordIdx < 4 ? ++accordIdx : accordIdx = 0;
+                    if (accordIdx == index) break;
+                }
+                // if accordIdx equals index after exiting loop, all steps are completed, close final step
+                if (accordIdx == index) stepTemplates[index].classList.add('setup-step--closed')
+                // else open next incomplete step
+                else accord(accordIdx);
+            })
         } else {
             // when checkbox is unchecked, reopen unchecked step
             progress--;
-            accord(index);
+            handleMarkAsNotDone(...icons).then(() => {
+                accord(index);
+            })
         }
         progressInnerBar.style.width = progress * 20;
         completedSteps.innerText = progress; 
-    })
+    });
 });
 
 // CLOSE BANNER 
@@ -244,3 +254,39 @@ function closeProfileMenu (e) {
         profileMenuControl.ariaExpanded = 'false'
     };
 }
+
+const HIDDEN_CLASS = 'hidden';
+const MARKED_AS_DONE_ClASS = 'check-box-done';
+
+function handleMarkAsDoneOrNotDone () {
+    // const markedAsDone = checkBoxButton.classList.contains(MARKED_AS_DONE_ClASS);
+    // if (markedAsDone) {
+    //     handleMarkAsNotDone();
+    // } else {
+    //     handleMarkAsDone();
+    // }
+}  
+
+function handleMarkAsDone (notCompletedIcon, loadingSpinnerIcon, completedIcon) {
+    return new Promise((resolve) => {
+        notCompletedIcon.classList.add(HIDDEN_CLASS);
+        loadingSpinnerIcon.classList.remove(HIDDEN_CLASS);
+        setTimeout(() => {
+            loadingSpinnerIcon.classList.add(HIDDEN_CLASS);
+            completedIcon.classList.remove(HIDDEN_CLASS);
+            resolve();
+        }, 100);
+    })
+};
+
+function handleMarkAsNotDone (notCompletedIcon, loadingSpinnerIcon, completedIcon) {
+    return new Promise((resolve) => {
+        completedIcon.classList.add(HIDDEN_CLASS);
+        loadingSpinnerIcon.classList.remove(HIDDEN_CLASS);
+        setTimeout(() => {
+            loadingSpinnerIcon.classList.add(HIDDEN_CLASS);
+            notCompletedIcon.classList.remove(HIDDEN_CLASS);
+            resolve();
+        }, 100);
+    });
+};

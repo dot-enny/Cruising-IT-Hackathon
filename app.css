@@ -41,6 +41,14 @@ html {
     font-family: Inter, sans-serif;
 }
 
+/* button:focus, a:focus {
+    outline: 2px solid #005BD3;
+    outline-offset: 1px;
+}
+a {
+    border-radius: 12px;
+} */
+
 body {
     min-width: 320px;
     background-color: var(--background);
@@ -433,7 +441,7 @@ input[type="search"]::placeholder {
     display: none;
 }
 
-.setup-step--closed button {
+.setup-step--closed button:not(.checkbox-button) {
     display: none;
 }
 
@@ -470,10 +478,10 @@ input[type="search"]::placeholder {
     font-weight: 600;
 }
 
-.setup-step label:focus {
+/* .setup-step label:focus {
     outline: none;
     border: none;
-}
+} */
 
 input[type="checkbox"] {
     display: block;
@@ -481,89 +489,52 @@ input[type="checkbox"] {
     right: -10000000000vw;
 }
 
-input[type="checkbox"]+span>svg {
-    position: absolute;
-    /* top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); */
+.checkbox-button {
+    background-color: transparent;
+    border: none;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: ease 0.2s;
+
+    &:focus .not-completed-icon circle, &:hover .not-completed-icon circle {
+        stroke-dasharray: 0 0;
+    }
+
+    .loading-spinner-icon {
+        animation: spin 1s linear none infinite;
+        animation-duration: 0.3s;
+        animation-name: spin;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    }
+
+    .completed-icon {
+        animation: zoom-in-spin 0.3s linear;
+    }
+}
+.hidden {
+    display: none;
 }
 
-input[type="checkbox"]+span>svg {
-    opacity: 0;
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
-input[type="checkbox"]+span>svg:nth-of-type(1) {
-    animation-name: checkSvgAnimation;
-    animation-duration: 70ms;
-    animation-timing-function: linear;
-    opacity: 1;
-}
-
-input[type="checkbox"]+span:hover>svg:nth-of-type(2) {
-    opacity: 1;
-}
-
-input[type="checkbox"]:focus>span>svg:nth-of-type(5) {
-    opacity: 1;
-}
-
-input[type="checkbox"]:checked+span>svg {
-    animation-name: checkSvgAnimation;
-    animation-duration: 100ms;
-    animation-fill-mode: both;
-}
-
-input[type="checkbox"]:checked+span>svg:nth-of-type(1) {
-    opacity: 0;
-}
-
-input[type="checkbox"]:checked+span>svg:nth-of-type(2) {
-    animation-delay: 50ms;
-}
-
-input[type="checkbox"]:checked+span>svg:nth-of-type(3) {
-    animation-delay: 150ms;
-}
-
-input[type="checkbox"]:checked+span>svg:nth-of-type(4) {
-    animation-delay: 230ms;
-}
-
-input[type="checkbox"]:checked+span>svg:nth-of-type(5) {
-    animation-delay: 300ms;
-}
-
-input[type="checkbox"]:checked+span>svg:nth-of-type(6) {
-    animation-delay: 380ms;
-}
-
-input[type="checkbox"]:checked+span>svg:nth-of-type(7) {
-    animation-delay: 450ms;
-}
-
-input[type="checkbox"]:checked+span>svg:nth-of-type(8) {
-    animation-delay: 520ms;
-}
-
-input[type="checkbox"]:checked+span>svg:nth-of-type(9) {
-    animation-delay: 600ms;
-}
-
-input[type="checkbox"]:checked+span>svg:nth-of-type(10) {
-    animation-delay: 700ms;
-    opacity: 1;
-}
-
-@keyframes checkSvgAnimation {
-    0% {
+@keyframes zoom-in-spin {
+    from {
+        transform: rotate(270deg);
         opacity: 0;
     }
-
-    50% {
-        opacity: 1;
-    }
-
-    100% {
+    to {
+        transform: rotate(360deg);
         opacity: 1;
     }
 }
