@@ -290,3 +290,10 @@ function handleMarkAsNotDone (notCompletedIcon, loadingSpinnerIcon, completedIco
         }, 100);
     });
 };
+
+
+// SEARCH BAR FOCUS
+const searchBarLabel = document.querySelector('#search-bar-label');
+const searchBar = searchBarLabel.querySelector('#search-bar');
+searchBar.addEventListener('focus', () => searchBarLabel.classList.add('search-bar-focus'))
+searchBar.addEventListener('blur', () => searchBarLabel.classList.remove('search-bar-focus'));
