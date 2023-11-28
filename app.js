@@ -99,8 +99,8 @@ function accord (idx) {
 
 
 // PROGRESS BAR AND COMPLETED STEPS 
-const progressInnerBar = document.querySelector('.setup-progress__bar--inner-bar')
-const completedSteps = document.querySelector('.setup-progress__completed-steps')
+const progressInnerBar = document.querySelector('#inner-progress-bar')
+const completedSteps = document.querySelector('#completed-number')
 const checkBoxButtons = setupSteps.querySelectorAll('#checkbox-button');
 const checkBoxes = setupSteps.querySelectorAll('input[type="checkbox"]');
 let progress = 0;
@@ -136,7 +136,7 @@ checkBoxButtons.forEach((checkBoxButton, index) => {
                 accord(index);
             })
         }
-        progressInnerBar.style.width = progress * 20;
+        progressInnerBar.style.width = progress * 14.4;
         completedSteps.innerText = progress; 
     });
 });
@@ -192,7 +192,7 @@ const profileMenu = document.querySelector('#profile-menu');
 const allMenuItems = profileMenu.querySelectorAll('[role="menuitem"]');
 
 allMenuItems.forEach((item, index) => {
-    // item.addEventListener('click', () => window.location.href = 'https://admin.shopify.com');
+    item.addEventListener('click', () => window.location.href = 'https://admin.shopify.com');
     item.addEventListener('keyup', (e) => handleMenuItemArrowKeyPress(e, index));
 });
 function handleMenuItemArrowKeyPress (e, index) {

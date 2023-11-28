@@ -326,7 +326,7 @@ menu {
     visibility: hidden;
 }
 
-
+/* SET UP GUIDE */
 .setup-guide {
     background-color: var(--white);
     padding: 8px;
@@ -334,6 +334,36 @@ menu {
     margin: 0 auto;
     margin-top: 16px;
     transition: ease 0.2s;
+
+    .setup-guide__header {
+        display: flex;
+        justify-content: space-between;
+        color: var(--font-dark);
+        padding: 8px;
+        margin-bottom: 16px;
+    }
+    .setup-guide__header--title {
+        font-size: var(--size-14);
+        font-weight: 600;
+        line-height: 140%;
+        margin-bottom: 4px;
+    }
+    
+    .setup-guide__header--description {
+        font-size: var(--size-13);
+        font-weight: 400;
+        line-height: 140%;
+        margin-bottom: 16px;
+    }
+
+    .setup-guide__control {
+        cursor: pointer;
+        border: none;
+        background-color: transparent;
+        transition: ease 0.3s;
+        align-self: start;
+        margin-top: 4px;
+    }
 }
 
 .setup-guide--closed {
@@ -343,124 +373,133 @@ menu {
     height: 0;
 }
 
-.setup-guide__control {
-    cursor: pointer;
-    border: none;
-    background-color: transparent;
-    transition: ease 0.3s;
-    align-self: start;
-    margin-top: 4px;
-}
 .setup-guide__control--closed {
     transition: ease 0.3s;
     transform: rotateZ(180deg);
 }
 
-.setup-guide__header {
-    display: flex;
-    justify-content: space-between;
-    color: var(--font-dark);
-    padding: 8px;
-    margin-bottom: 16px;
-}
-.setup-guide__header--title {
-    font-size: var(--size-14);
-    font-weight: 600;
-    line-height: 140%;
-    margin-bottom: 4px;
-}
-
-.setup-guide__header--description {
-    font-size: var(--size-13);
-    font-weight: 400;
-    line-height: 140%;
-    margin-bottom: 16px;
-}
-
+/* PROGRESS BAR */
 .setup-progress {
     display: flex;
     align-items: center;
     transition: ease 0.5s;
     line-height: 130%;
+    .setup-progress__label {
+        font-size: var(--size-12);
+        font-weight: 400;
+        color: var(--font-dark);
+        margin-right: 0.5rem;
+    }
+    
+    .setup-progress__bar {
+        background-color: #dbdbdb;
+        width: 72px;
+        height: 4px;
+        border-radius: 8px;
+        position: relative;
+    }
+    
+    .setup-progress__bar--inner-bar {
+        position: absolute;
+        z-index: 1;
+        height: 4px;
+        width: 0;
+        border-radius: 8px;
+        background-color: #1c181d;
+        transition: ease 0.5s;
+    }
 }
 
-.setup-progress__label {
-    font-size: var(--size-12);
-    font-weight: 400;
-    color: var(--font-dark);
-    margin-right: 0.5rem;
-}
-
-.setup-progress__bar {
-    background-color: #dbdbdb;
-    width: 100px;
-    height: 4px;
-    border-radius: 8px;
-    position: relative;
-}
-
-.setup-progress__bar--inner-bar {
-    position: absolute;
-    z-index: 1;
-    height: 4px;
-    width: 0;
-    border-radius: 8px;
-    background-color: #1c181d;
-    transition: ease 0.5s;
-}
-
-/* .setup-step__checkbox {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} */
-
-.setup-steps {
-}
-
+/* SETUP STEP AND CHECKBOX */
 .setup-step {
     background-color: #F3F3F3;
     border-radius: 10px;
-    padding: 0.5rem 0.5rem 0;
+    padding: 8px 8px 12px 8px;
     position: relative;
     display: flex;
     align-items: start;
-    margin-top: 0.5rem;
+    /* margin-bottom: 2px; */
     /* height: 0;
     display: none; */
     /* transition: ease 0.3s; */
+
+    & img {
+        margin-left: auto;
+    }
+    
+    .setup-step__title {
+        color: var(--font-dark);
+        font-size: var(--size-13);
+        font-weight: 600;
+        margin-top: 2px;
+        cursor: pointer;
+        line-height: 140%;
 }
 
-.setup-guide img {
-    margin-left: auto;
+    .setup-step__description {
+        color: var(--font-mid);
+        font-size: var(--size-13);
+        font-weight: 500;
+        margin-block: 16px;
+        line-height: 140%;
+    }
+
+    .setup-step__description a {
+        color: var(--focused);
+        font-size: var(--size-14);
+        text-decoration: none;
+    }
+
+    .setup-step__button {
+        color: #F6F3F6;
+        padding: 6px 12px;
+        font-size: var(--size-12);
+        font-weight: 500;
+        background-color: #404040;
+        border-radius: 6px;
+        width: max-content;
+    }
+
+    .setup-step__button2 {
+        border: none;
+        font-size: var(--size-12);
+        font-weight: 600;
+    }
+
+    /* CHECKBOX BUTTON */
+    .checkbox-button {
+        background-color: transparent;
+        border: none;
+        border-radius: 12px;
+        margin-right: 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: ease 0.2s;
+        
+        &:focus .not-completed-icon circle, &:hover .not-completed-icon circle {
+            stroke-dasharray: 0 0;
+        }
+        
+        .loading-spinner-icon {
+            animation: spin 1s linear none infinite;
+            animation-duration: 0.3s;
+            animation-name: spin;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+        
+        .completed-icon {
+            animation: zoom-in-spin 0.3s linear;
+        }
+    }
 }
 
-.setup-step label {
-    position: relative;
-    width: 100%;
-    max-width: 24px;
-    height: 24px;
-    cursor: pointer;
-    flex-grow: 1;
-}
-
-.setup-step__checkbox {
-    margin-right: 2rem;
-}
-
-.setup-step__title {
-    color: var(--font-dark);
-    font-size: var(--size-13);
-    font-weight: 600;
-    margin-top: 0.25rem;
-    cursor: pointer;
-}
-
-.setup-step__description-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    row-gap: 1rem;
+input[type="checkbox"] {
+    display: block;
+    position: fixed;
+    right: -10000000000vw;
 }
 
 .setup-step.setup-step--closed {
@@ -471,108 +510,12 @@ menu {
     row-gap: 0;
 }
 
-.setup-step--closed .setup-step__description {
-    display: none;
-}
-
-.setup-step--closed button:not(.checkbox-button) {
-    display: none;
-}
-
+.setup-step--closed .setup-step__description,
+.setup-step--closed button:not(.checkbox-button),
 .setup-step--closed .setup-step__image {
     display: none;
 }
 
-.setup-step__description {
-    color: var(--font-mid);
-    font-size: var(--size-13);
-    font-weight: 500;
-    /* margin-block: 0.75rem; */
-}
-
-.setup-step__description a {
-    color: var(--focused);
-    font-size: var(--size-14);
-    text-decoration: none;
-}
-
-.setup-step__button {
-    color: #F6F3F6;
-    font-size: var(--size-12);
-    font-weight: 500;
-    background-color: #404040;
-    border-radius: 6px;
-    padding: 0.375rem 0.75rem;
-    width: max-content;
-}
-
-.setup-step__button2 {
-    border: none;
-    font-size: var(--size-12);
-    font-weight: 600;
-}
-
-/* .setup-step label:focus {
-    outline: none;
-    border: none;
-} */
-
-input[type="checkbox"] {
-    display: block;
-    position: fixed;
-    right: -10000000000vw;
-}
-
-/* CHECKBOX BUTTON */
-.checkbox-button {
-    background-color: transparent;
-    border: none;
-    border-radius: 12px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    transition: ease 0.2s;
-
-    &:focus .not-completed-icon circle, &:hover .not-completed-icon circle {
-        stroke-dasharray: 0 0;
-    }
-
-    .loading-spinner-icon {
-        animation: spin 1s linear none infinite;
-        animation-duration: 0.3s;
-        animation-name: spin;
-        animation-iteration-count: infinite;
-        animation-timing-function: linear;
-    }
-
-    .completed-icon {
-        animation: zoom-in-spin 0.3s linear;
-    }
-}
-.hidden {
-    display: none;
-}
-
-@keyframes spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-@keyframes zoom-in-spin {
-    from {
-        transform: rotate(270deg);
-        opacity: 0;
-    }
-    to {
-        transform: rotate(360deg);
-        opacity: 1;
-    }
-}
 
 
 /* BREAKPOINTS */
@@ -616,7 +559,7 @@ input[type="checkbox"] {
 
     .setup-guide {
         max-width: 800px;
-        border-radius: var(--size-14);
+        border-radius: 18px;
     }
     .trial-callout__close-button {
         padding-right: 8px;
@@ -627,13 +570,36 @@ input[type="checkbox"] {
     .desktop {
         display: none;
     }
-    .setup-step__description-container {
-        row-gap: 0.75rem;
-    }
     .notification-panel {
         inset: 70px 10px auto;
     }
     .profile-menu__control {
         width: 32px;
     }
+}
+
+/* ANIMATIONS */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes zoom-in-spin {
+    from {
+        transform: rotate(270deg);
+        opacity: 0;
+    }
+    to {
+        transform: rotate(360deg);
+        opacity: 1;
+    }
+}
+
+/* CONSTANT CLASSES */
+.hidden {
+    display: none;
 }
