@@ -141,7 +141,7 @@ checkBoxButtons.forEach((checkBoxButton, index) => {
     });
 });
 
-// CLOSE BANNER 
+// CLOSE TRIAL CALLOUT BANNER 
 const banner = document.querySelector('#banner');
 const bannerCloseIcon = document.querySelector('#banner-close-button');
 const selectPlanButton = banner.querySelector('#select-plan');
@@ -150,6 +150,9 @@ selectPlanButton.addEventListener('click', () => {
 })
 bannerCloseIcon.addEventListener('click', () => {
     banner.classList.add('trial-callout--closed');
+    setTimeout(() => {
+        banner.classList.add('remove-trial-callout');
+    }, 100);
 })
 
 // TOGGLE NOTIFICATIONS PANEL
@@ -256,16 +259,6 @@ function closeProfileMenu (e) {
 }
 
 const HIDDEN_CLASS = 'hidden';
-const MARKED_AS_DONE_ClASS = 'check-box-done';
-
-function handleMarkAsDoneOrNotDone () {
-    // const markedAsDone = checkBoxButton.classList.contains(MARKED_AS_DONE_ClASS);
-    // if (markedAsDone) {
-    //     handleMarkAsNotDone();
-    // } else {
-    //     handleMarkAsDone();
-    // }
-}  
 
 function handleMarkAsDone (notCompletedIcon, loadingSpinnerIcon, completedIcon) {
     return new Promise((resolve) => {
