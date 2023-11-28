@@ -297,3 +297,25 @@ const searchBarLabel = document.querySelector('#search-bar-label');
 const searchBar = searchBarLabel.querySelector('#search-bar');
 searchBar.addEventListener('focus', () => searchBarLabel.classList.add('search-bar-focus'))
 searchBar.addEventListener('blur', () => searchBarLabel.classList.remove('search-bar-focus'));
+
+
+// CLOSE MENU WHEN USER CLICKS OUTSIDE OF MENU
+window.addEventListener('click', (e) => {
+    const isClickInsideProfileMenu = profileMenu.contains(e.target) || profileMenuControl.contains(e.target);
+    const isClickInsideNotificationPanel = notificationPanel.contains(e.target) || notificationPanelControl.contains(e.target);
+    // Close the profile menu if the click is outside of it
+    if (!isClickInsideProfileMenu && !profileMenu.classList.contains('menu--closed')) {
+        profileMenu.classList.add('menu--closed');
+        profileMenuControl.classList.remove('profile-menu-control--active');
+        profileMenuControl.setAttribute('aria-expanded', 'false');
+    }
+
+    // Close the notification panel if the click is outside of it
+    if (!isClickInsideNotificationPanel && !notificationPanel.classList.contains('menu--closed')) {
+        notificationPanel.classList.add('menu--closed');
+        notificationPanelControl.classList.remove('notification-panel__control--active');
+        notificationPanelControl.setAttribute('aria-expanded', 'false');
+    }
+});
+
+
