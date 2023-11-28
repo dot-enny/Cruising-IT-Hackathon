@@ -51,17 +51,20 @@ body {
 /* TOP BAR */
 .top-bar {
     background-color: #1A1A1A;
-    padding: 1rem clamp(0.5rem, 2dvw, 1rem);
+    padding: 12px 16px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+    height: 56px;
 }
 
 /* SEARCH BAR */
 .search-bar-label {
     position: relative;
     background-color: var(--grey-g2);
-    padding: 0.4rem;
+    padding: 8px;
+    width: minmax(238px, 480px);
+    height: 32px;
     display: flex;
     align-items: center;
     border-color: var(--grey-100);
@@ -76,10 +79,9 @@ body {
 
     & input[type="search"] {
         border: none;
-        padding: 0.1rem;
         background-color: var(--grey-g2);
         color: #FFF;
-        margin-left: 0.3rem;
+        margin-left: 6px;
         width: 100%;
         outline: none;
     
@@ -94,11 +96,11 @@ body {
     outline: 2px solid var(--white);
 }
 
-/* NOTIFICATION PANEL AND MENU */
+/* NOTIFICATION PANEL AND PROFILE MENU */
 .notification-panel, menu {
     position: absolute;
-    top: 70px;
-    right: 20px;
+    top: 64px;
+    right: 16px;
     z-index: 1;
     background-color: var(--white);
     border-radius: 14px;
@@ -113,7 +115,7 @@ body {
     font-size: 0.875rem;
     font-weight: 600;
     width: minmax(300px, 23.938rem);
-    padding: 1rem;
+    padding: 16px;
 }
 .notification-panel__control {
     background-color: inherit;
@@ -148,7 +150,7 @@ body {
 }
 .notification-panel__header-icons {
     display: flex;
-    gap: 1rem;
+    gap: 16px;
 }
 .notification-panel__alert-area {
     background-color: var(--background);
@@ -164,18 +166,13 @@ menu {
     border-radius: 14px;
     list-style-type: none;
     padding: 6px 0;
-    max-width: 320px;
     & ul {
-        /* padding: 0rem 0.375rem; */
         margin: 0 6px;
         list-style: none;
     }
     & li {
         font-size: 0.8125rem;
         cursor: pointer;
-        /* display: flex;
-        justify-content: stretch;
-        align-items: stretch; */
         margin: 4px 0;
         & button {
             background-color: transparent;
@@ -263,10 +260,12 @@ menu {
     border: none;
     cursor: pointer;
     transition: ease 0.4s;
+    width: 142px;
+    height: 32px;
 }
 
 .profile-menu__control-name {
-    padding: 0.5rem 0.8rem;
+    margin: 0 8px;
 }
 
 .profile-menu__control-avatar, .menu__badge-avatar {
@@ -596,7 +595,7 @@ input[type="checkbox"] {
     .plan-banner {
         display: flex;
         align-items: center;
-        max-width: 60dvw;
+        max-width: 800px;
         margin: 2rem auto 1rem;
         border-radius: 8px;
         padding: 0.75rem 0.5rem 0.75rem 1rem;
@@ -612,7 +611,7 @@ input[type="checkbox"] {
     }
 
     .setup-guide {
-        max-width: 60dvw;
+        max-width: 800px;
         border-radius: var(--size-14);
     }
 }
@@ -626,5 +625,8 @@ input[type="checkbox"] {
     }
     .notification-panel {
         inset: 70px 10px auto;
+    }
+    .profile-menu__control {
+        width: 32px;
     }
 }
