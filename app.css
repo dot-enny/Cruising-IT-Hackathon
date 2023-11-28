@@ -73,30 +73,32 @@ body {
     border-radius: var(--br-sm);
     margin-left: auto;
     outline: 1px solid var(--grey-100);
+    cursor: text;
+
     &:hover:not(:focus-within) {
         outline: 1px solid #E1E1E1;
     }
-}
 
+    & input[type="search"] {
+        border: none;
+        padding: 0.1rem;
+        background-color: var(--grey-g2);
+        color: #FFF;
+        margin-left: 0.3rem;
+        width: 100%;
+        outline: none;
+    
+        &::placeholder {
+            font-size: var(--size-13);
+            font-weight: 500;
+            margin-left: auto;
+        }
+    }
+}
 .search-bar-focus {
     outline: 2px solid var(--white);
 }
 
-input[type="search"] {
-    border: none;
-    padding: 0.1rem;
-    background-color: var(--grey-g2);
-    color: #FFF;
-    margin-left: 0.3rem;
-    width: 100%;
-    outline: none;
-
-    &::placeholder {
-        font-size: var(--size-13);
-        font-weight: 500;
-        margin-left: auto;
-    }
-}
 
 /* NOTIFICATION PANEL AND MENU */
 .notification-panel, menu {
