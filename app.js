@@ -82,7 +82,6 @@ setupGuideControl.addEventListener('click', () => {
   
     setupSteps.classList.toggle('setup-guide--closed');
     setupGuideControl.classList.toggle('setup-guide__control--closed')
-    setupSteps.children[0].style.marginTop = !0 ? 0 : 16;
 
     const isExpanded = setupGuideControl.getAttribute('aria-expanded') === 'true';
     setupGuideControl.setAttribute('aria-expanded', isExpanded ? 'false' : 'true');
@@ -95,6 +94,7 @@ function accord (idx) {
     stepTemplates.forEach((stepTemplate, index) => {
         if (index != idx) stepTemplate.classList.add('setup-step--closed');
     })
+    stepTemplates[idx].style.transform = 'rotateX(360deg)';
     stepTemplates[idx].classList.remove('setup-step--closed');
 };
 
