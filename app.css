@@ -266,6 +266,8 @@ menu {
 
 .profile-menu__control-name {
     margin: 0 8px;
+    font-weight: 500;
+    color: var(--font-light);
 }
 
 .profile-menu__control-avatar, .menu__badge-avatar {
