@@ -164,9 +164,9 @@ notificationPanelControl.addEventListener('keyup', (e) => {
 function toggleNotificationPanel () {
     // close profile menu and open notification panel
     profileMenu.classList.add('menu--closed');
-    profileMenuControl.classList.remove('profile-menu-control--active');
+    // profileMenuControl.classList.remove('profile-menu-control--active');
     notificationPanel.classList.toggle('menu--closed');
-    notificationPanelControl.classList.toggle('notification-panel__control--active')
+    // notificationPanelControl.classList.toggle('notification-panel__control--active')
     profileMenuControl.ariaExpanded = 'false';
     
     if (notificationPanelControl.getAttribute('aria-expanded') === 'true') {
@@ -232,9 +232,9 @@ profileMenu.addEventListener('keyup', (e) => {
 function toggleProfileMenu () {
     // close notification panel and open profile menu
     notificationPanel.classList.add('menu--closed');
-    notificationPanelControl.classList.remove('notification-panel__control--active')
+    // notificationPanelControl.classList.remove('notification-panel__control--active')
     profileMenu.classList.toggle('menu--closed');
-    profileMenuControl.classList.toggle('profile-menu-control--active');
+    // profileMenuControl.classList.toggle('profile-menu-control--active');
     notificationPanelControl.ariaExpanded = 'false';
     
     const allMenuItems = profileMenu.querySelectorAll('[role="menuitem"]');
@@ -306,14 +306,14 @@ window.addEventListener('click', (e) => {
     // Close the profile menu if the click is outside of it
     if (!isClickInsideProfileMenu && !profileMenu.classList.contains('menu--closed')) {
         profileMenu.classList.add('menu--closed');
-        profileMenuControl.classList.remove('profile-menu-control--active');
+        // profileMenuControl.classList.remove('profile-menu-control--active');
         profileMenuControl.setAttribute('aria-expanded', 'false');
     }
 
     // Close the notification panel if the click is outside of it
     if (!isClickInsideNotificationPanel && !notificationPanel.classList.contains('menu--closed')) {
         notificationPanel.classList.add('menu--closed');
-        notificationPanelControl.classList.remove('notification-panel__control--active');
+        // notificationPanelControl.classList.remove('notification-panel__control--active');
         notificationPanelControl.setAttribute('aria-expanded', 'false');
     }
 });

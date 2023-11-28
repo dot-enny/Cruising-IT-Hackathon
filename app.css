@@ -54,6 +54,7 @@ body {
     background-color: var(--background);
 }
 
+/* TOP BAR */
 .top-bar {
     background-color: #1A1A1A;
     padding: 1rem clamp(0.5rem, 2dvw, 1rem);
@@ -99,7 +100,6 @@ body {
     outline: 2px solid var(--white);
 }
 
-
 /* NOTIFICATION PANEL AND MENU */
 .notification-panel, menu {
     position: absolute;
@@ -131,6 +131,19 @@ body {
     margin-right: 1%;
     transition: ease 0.4s;
 }
+.notification-panel__control, .profile-menu__control {
+    &:hover {
+        background-color: var(--grey-100);
+    }
+    &:active {
+        background-color: var(--grey-50);
+    }
+    &:focus-visible {
+        background-color: var(--grey-50);
+        outline: 2px solid #005BD3;
+        outline-offset: 1px;
+    }
+}
 .notification-panel__control--active {
     background-color: #656266;
 }
@@ -151,7 +164,7 @@ body {
     padding: 1rem;
 }
 
-/* MENU */
+/* PROFILE MENU */
 menu {
     width: clamp(250px, 20dvw, 450px);
     border-radius: 14px;
@@ -232,8 +245,8 @@ menu {
     visibility: hidden;
 }
 
-/* PROFILE MENU */
-.profile-menu-control {
+/* PROFILE MENU CONTROL */
+.profile-menu__control {
     background-color: var(--grey-g2);
     color: #FFF;
     font-size: var(--size-12);
@@ -244,15 +257,12 @@ menu {
     cursor: pointer;
     transition: ease 0.4s;
 }
-.profile-menu-control--active {
-    background-color: #656266;
-}
 
-.profile-menu-control--name {
+.profile-menu__control-name {
     padding: 0.5rem 0.8rem;
 }
 
-.profile-menu-control-avatar, .menu__badge-avatar {
+.profile-menu__control-avatar, .menu__badge-avatar {
     background-color: #36FBA1;
     color: #00000066;
     padding: 0.4rem;
