@@ -159,13 +159,18 @@ function toggleNotificationPanel () {
     notificationPanelControl.classList.toggle('notification-panel__control--active')
     profileMenuControl.ariaExpanded = 'false';
     
-    const isExpanded = notificationPanelControl.getAttribute('aria-expanded') === 'true';
-    notificationPanelControl.setAttribute('aria-expanded', isExpanded ? 'false' : 'true');
+    if (notificationPanelControl.getAttribute('aria-expanded') === 'true') {
+        notificationPanelControl.setAttribute('aria-expanded', 'false');
+        notificationPanelControl.focus();
+    } else if (notificationPanelControl.getAttribute('aria-expanded') === 'false') {
+        notificationPanelControl.setAttribute('aria-expanded', 'true');
+    }
 };
 function closeNoticationPanel (e) {
     if (e.key == 'Escape') {
         notificationPanel.classList.add('menu--closed')
         notificationPanelControl.focus()
+        notificationPanelControl.setAttribute('aria-expanded', 'false');
     };
 };
 
@@ -222,14 +227,20 @@ function toggleProfileMenu () {
     profileMenuControl.classList.toggle('profile-menu-control--active');
     notificationPanelControl.ariaExpanded = 'false';
     
-    const isExpanded = profileMenuControl.getAttribute('aria-expanded') === 'true';
-    profileMenuControl.setAttribute('aria-expanded', isExpanded ? 'false' : 'true');
-    // isExpanded ? allMenuItems.item(0).focus() : profileMenuControl.focus();
+    const allMenuItems = profileMenu.querySelectorAll('[role="menuitem"]');
+    if (profileMenuControl.getAttribute('aria-expanded') === 'true') {
+        profileMenuControl.setAttribute('aria-expanded', 'false');
+        profileMenuControl.focus();
+    } else if (profileMenuControl.getAttribute('aria-expanded') === 'false') {
+        profileMenuControl.setAttribute('aria-expanded', 'true');
+        allMenuItems.item(0).focus();
+    }
 }
 
 function closeProfileMenu (e) {
     if (e.key == 'Escape') {
         profileMenu.classList.add('menu--closed')
         profileMenuControl.focus()
+        profileMenuControl.ariaExpanded = 'false'
     };
 }
