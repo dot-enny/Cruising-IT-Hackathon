@@ -142,6 +142,14 @@ bannerCloseIcon.addEventListener('click', () => {
     }, 100);
 })
 
+// TOGGLE NOTIFICATIONS PANEL
+const bellIcon = document.querySelector('.header__bell-icon');
+const notificationsPanel = document.querySelector('.notification-panel');
+bellIcon.addEventListener('click', () => {
+    notificationsPanel.style.transition = 'ease 0.1s';
+    notificationsPanel.classList.toggle('menu--closed');
+})
+
 // TOGGLE POPOVER MENU
 const avatar = document.querySelector('.header__badge');
 const menu = document.querySelector('menu');
