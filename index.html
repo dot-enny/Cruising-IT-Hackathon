@@ -11,162 +11,170 @@
 </head>
 
 <body>
-  <header>
-    <img class="mobile" src="https://crushingit.tech/hackathon-assets/shopify-icon.svg" alt="logo" />
-    <img class="desktop" src="https://crushingit.tech/hackathon-assets/shopify-icon-desktop.svg" alt="logo" />
-    <label for="search-bar" class="search-bar-container">
-      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 13 14" fill="none">
+  <div class="top-bar">
+
+    <!-- logo and link to shopify.com -->
+    <a href="https://shopify.com" aria-label="link to shopify.com">
+      <svg class="mobile" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+        <path d="M21.2105 3.80404C21.2105 3.80404 20.8505 3.90685 20.259 4.08677C20.1561 3.75263 20.0018 3.36709 19.7961 2.95584C19.1274 1.6707 18.1245 0.976727 16.9415 0.976727C16.8644 0.976727 16.7872 0.976727 16.6843 1.00243C16.6586 0.951024 16.6072 0.925321 16.5815 0.873916C16.0671 0.308454 15.3985 0.0514257 14.6013 0.0771285C13.0583 0.128534 11.5152 1.23375 10.2808 3.21287C9.40646 4.60082 8.73782 6.34861 8.55781 7.71086C6.78334 8.25062 5.54893 8.63616 5.52321 8.66187C4.62312 8.9446 4.59741 8.9703 4.49454 9.81849C4.34024 10.4611 2 28.5815 2 28.5815L21.442 31.9486V3.75263C21.3391 3.77833 21.2619 3.77833 21.2105 3.80404ZM16.7101 5.19199C15.6814 5.50042 14.5498 5.86026 13.444 6.1944C13.7526 4.98637 14.3698 3.77833 15.0899 2.98155C15.3728 2.69882 15.7585 2.36468 16.1957 2.15906C16.6329 3.08436 16.7358 4.34379 16.7101 5.19199ZM14.627 1.10524C14.987 1.10524 15.2956 1.18235 15.5528 1.33657C15.1413 1.54219 14.7299 1.87633 14.3441 2.26187C13.3669 3.31568 12.6211 4.96066 12.3125 6.52853C11.3867 6.81126 10.4609 7.094 9.6122 7.35102C10.1523 4.90926 12.2353 1.18235 14.627 1.10524ZM11.6181 15.2418C11.721 16.8868 16.0671 17.2466 16.3243 21.1277C16.5043 24.1864 14.7041 26.2683 12.1067 26.4225C8.96928 26.6281 7.24625 24.7775 7.24625 24.7775L7.91488 21.9502C7.91488 21.9502 9.63792 23.2611 11.0266 23.1583C11.9267 23.1068 12.261 22.3615 12.2353 21.8474C12.1067 19.6884 8.55781 19.8169 8.32635 16.2699C8.12062 13.3141 10.0751 10.3068 14.3955 10.0241C16.0671 9.9213 16.9158 10.3326 16.9158 10.3326L15.9386 14.0338C15.9386 14.0338 14.8327 13.5197 13.5212 13.6225C11.6181 13.751 11.5924 14.9591 11.6181 15.2418ZM17.7387 4.88355C17.7387 4.11247 17.6359 3.00725 17.2758 2.08195C18.4588 2.31327 19.0246 3.62412 19.2817 4.4209C18.8188 4.54942 18.3045 4.70363 17.7387 4.88355Z" fill="white"/>
+        <path d="M22.085 31.8458L30.1601 29.841C30.1601 29.841 26.6883 6.37429 26.6626 6.22007C26.6369 6.06585 26.5083 5.96304 26.3797 5.96304C26.2511 5.96304 23.988 5.91164 23.988 5.91164C23.988 5.91164 22.5993 4.57509 22.085 4.06104V31.8458Z" fill="white"/>
+      </svg>    
+      <svg class="desktop" xmlns="http://www.w3.org/2000/svg" width="105" height="30" viewBox="0 0 105 30" fill="none">
+        <path d="M36.2171 16.6517C35.324 16.1564 34.854 15.7555 34.854 15.1895C34.854 14.4584 35.4885 14.0103 36.4992 14.0103C37.6743 14.0103 38.7084 14.5056 38.7084 14.5056L39.531 11.9821C39.531 11.9821 38.7789 11.3925 36.5462 11.3925C33.4438 11.3925 31.2816 13.1849 31.2816 15.6847C31.2816 17.0998 32.2922 18.1846 33.6318 18.9629C34.713 19.5761 35.089 20.0241 35.089 20.6609C35.089 21.3448 34.5484 21.8873 33.5378 21.8873C32.0337 21.8873 30.6235 21.109 30.6235 21.109L29.7539 23.6325C29.7539 23.6325 31.0701 24.505 33.2558 24.505C36.4521 24.505 38.7319 22.9249 38.7319 20.0949C38.7789 18.5384 37.6038 17.4535 36.2171 16.6517Z" fill="white"/>
+        <path d="M48.9559 11.3453C47.3812 11.3453 46.1591 12.1 45.1955 13.232L45.1485 13.2084L46.5116 6.039H42.9393L39.4844 24.2692H43.0333L44.2084 18.0431C44.6784 15.6847 45.8771 14.2461 47.0052 14.2461C47.8043 14.2461 48.1098 14.7886 48.1098 15.5668C48.1098 16.0621 48.0628 16.6517 47.9453 17.1469L46.6057 24.2928H50.1546L51.5412 16.9347C51.7057 16.1564 51.7997 15.2366 51.7997 14.5999C51.8467 12.5481 50.8126 11.3453 48.9559 11.3453Z" fill="white"/>
+        <path d="M59.884 11.3453C55.6065 11.3453 52.7627 15.2131 52.7627 19.5289C52.7627 22.2882 54.4549 24.5286 57.6512 24.5286C61.8582 24.5286 64.6785 20.7552 64.6785 16.3451C64.702 13.7745 63.2214 11.3453 59.884 11.3453ZM58.1448 21.7693C56.9227 21.7693 56.4291 20.7316 56.4291 19.4345C56.4291 17.3828 57.4867 14.0575 59.4139 14.0575C60.6831 14.0575 61.0826 15.1423 61.0826 16.2036C61.0826 18.4204 60.025 21.7693 58.1448 21.7693Z" fill="white"/>
+        <path d="M73.798 11.3453C71.4008 11.3453 70.0376 13.4679 70.0376 13.4679H69.9906L70.2021 11.5576H67.0528C66.8883 12.8547 66.6062 14.8121 66.3242 16.2979L63.8564 29.3161H67.4053L68.3924 24.0334H68.463C68.463 24.0334 69.1915 24.505 70.5547 24.505C74.7381 24.505 77.4644 20.2128 77.4644 15.8734C77.4644 13.4915 76.4068 11.3453 73.798 11.3453ZM70.4137 21.8401C69.4971 21.8401 68.9565 21.3212 68.9565 21.3212L69.5441 17.9959C69.9671 15.7791 71.1187 14.2933 72.3409 14.2933C73.422 14.2933 73.751 15.3074 73.751 16.2507C73.751 18.5384 72.3879 21.8401 70.4137 21.8401Z" fill="white"/>
+        <path d="M82.5408 6.22766C81.4127 6.22766 80.4961 7.12384 80.4961 8.30303C80.4961 9.36429 81.1542 10.0954 82.1648 10.0954H82.2118C83.3164 10.0954 84.28 9.34071 84.3035 8.02002C84.327 6.95876 83.6219 6.22766 82.5408 6.22766Z" fill="white"/>
+        <path d="M77.5586 24.2692H81.131L83.5518 11.6284H79.9559L77.5586 24.2692Z" fill="white"/>
+        <path d="M92.5759 11.6047H90.1081L90.2257 11.0152C90.4372 9.78881 91.1423 8.70396 92.3409 8.70396C92.9755 8.70396 93.469 8.89263 93.469 8.89263L94.1741 6.10975C94.1741 6.10975 93.563 5.80316 92.2469 5.80316C90.9777 5.80316 89.7321 6.15692 88.7685 6.98235C87.5464 8.02003 86.9823 9.5058 86.7003 11.0152L86.6062 11.6047H84.9611L84.444 14.2933H86.0892L84.209 24.2692H87.7579L89.6381 14.2933H92.0824L92.5759 11.6047Z" fill="white"/>
+        <path d="M101.131 11.6284C101.131 11.6284 98.8987 17.2413 97.9116 20.3072H97.8646C97.7941 19.3166 96.995 11.6284 96.995 11.6284H93.2581L95.3968 23.2315C95.4438 23.491 95.4203 23.656 95.3263 23.8211C94.9032 24.623 94.2217 25.4012 93.3991 25.9672C92.741 26.4625 91.9889 26.7691 91.4014 26.9813L92.3885 30.0001C93.1171 29.835 94.5977 29.2454 95.8669 28.0662C97.4885 26.5332 98.9927 24.1985 100.52 20.9911L104.868 11.6284H101.131Z" fill="white"/>
+        <path d="M17.5094 3.42124C17.5094 3.42124 17.1804 3.51558 16.6398 3.68066C16.5458 3.37407 16.4048 3.02032 16.2168 2.64298C15.6057 1.46379 14.6891 0.827035 13.608 0.827035C13.5375 0.827035 13.467 0.827035 13.373 0.850619C13.3495 0.803451 13.3025 0.779868 13.279 0.7327C12.8089 0.213859 12.1978 -0.0219779 11.4693 0.00160577C10.0591 0.0487732 8.64896 1.06287 7.52083 2.87882C6.72174 4.15234 6.11068 5.75603 5.94616 7.00596C4.32448 7.50122 3.19635 7.85498 3.17285 7.87856C2.35026 8.13798 2.32676 8.16156 2.23275 8.93983C2.16224 9.52942 0 26.1323 0 26.1323L17.768 29.2218V3.39766C17.6269 3.39766 17.5564 3.42124 17.5094 3.42124ZM13.3965 4.69476C12.4564 4.97776 11.4223 5.30794 10.4116 5.61452C10.6937 4.50609 11.2577 3.39766 11.9158 2.66656C12.1743 2.40714 12.5269 2.10055 12.9264 1.91188C13.326 2.7609 13.42 3.9165 13.3965 4.69476ZM11.4693 0.968537C11.7983 0.968537 12.0803 1.03929 12.3154 1.18079C11.9393 1.36946 11.5633 1.67605 11.2107 2.0298C10.3176 2.99673 9.63606 4.50609 9.35403 5.9447C8.50794 6.20412 7.66185 6.46354 6.88626 6.69937C7.40332 4.43534 9.30703 1.0157 11.4693 0.968537ZM8.74297 13.9396C8.83698 15.4489 12.8089 15.7791 13.0439 19.3402C13.2085 22.1467 11.5633 24.057 9.18952 24.1985C6.3222 24.3871 4.74752 22.6891 4.74752 22.6891L5.35859 20.0949C5.35859 20.0949 6.93327 21.2977 8.20241 21.2033C9.025 21.1562 9.33053 20.4722 9.30703 20.0006C9.18952 18.0195 5.94616 18.1375 5.73463 14.8829C5.54661 12.1472 7.33281 9.38791 11.2812 9.12849C12.8089 9.03416 13.5845 9.4115 13.5845 9.4115L12.6914 12.8075C12.6914 12.8075 11.6808 12.3359 10.4822 12.4302C8.74297 12.5481 8.71946 13.6566 8.74297 13.9396ZM14.3366 4.41176C14.3366 3.70425 14.2426 2.69015 13.9135 1.84113C14.9947 2.05339 15.5117 3.25616 15.7467 3.98725C15.3237 4.10517 14.8536 4.24667 14.3366 4.41176Z" fill="white"/>
+        <path d="M18.3086 29.1747L25.6884 27.3352C25.6884 27.3352 22.5156 5.80326 22.4921 5.66176C22.4686 5.52025 22.351 5.42592 22.2335 5.42592C22.116 5.42592 20.0478 5.37875 20.0478 5.37875C20.0478 5.37875 18.7786 4.1524 18.3086 3.68073V29.1747Z" fill="white"/>
+      </svg>
+    </a>
+
+    <!-- search bar -->
+    <label id="search-bar-label" for="search-bar" class="search-bar-label">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 13 14" fill="none">
         <path fill-rule="evenodd" clip-rule="evenodd"
           d="M8.82264 10.3833C7.89957 11.0841 6.74835 11.5 5.5 11.5C2.46243 11.5 0 9.03757 0 6C0 2.96243 2.46243 0.5 5.5 0.5C8.53757 0.5 11 2.96243 11 6C11 7.24835 10.5841 8.39957 9.8833 9.32264L12.7803 12.2197C13.0732 12.5126 13.0732 12.9874 12.7803 13.2803C12.4874 13.5732 12.0126 13.5732 11.7197 13.2803L8.82264 10.3833ZM9.5 6C9.5 8.20914 7.70914 10 5.5 10C3.29086 10 1.5 8.20914 1.5 6C1.5 3.79086 3.29086 2 5.5 2C7.70914 2 9.5 3.79086 9.5 6Z"
           fill="#B5B5B5" />
       </svg>
       <input id="search-bar" class="header__search-bar" type="search" placeholder="Search" />
     </label>
-    <svg class="header__bell-icon" width="20" height="20" viewBox="0 0 21 20" fill="none"
-      xmlns="http://www.w3.org/2000/svg">
-      <path fill-rule="evenodd" clip-rule="evenodd"
-        d="M7.75203 14.4239L5.3061 14.1427C3.45144 13.9295 2.92542 11.4844 4.52838 10.5274L4.5933 10.4886C5.466 9.96761 6.00045 9.02609 6.00045 8.00969V7.5C6.00045 5.01472 8.01517 3 10.5005 3C12.9857 3 15.0005 5.01472 15.0005 7.5V8.00969C15.0005 9.02609 15.5349 9.96761 16.4076 10.4886L16.4725 10.5274C18.0755 11.4844 17.5495 13.9295 15.6948 14.1427L13.152 14.435V14.8C13.152 16.2912 11.9432 17.5 10.452 17.5C8.96086 17.5 7.75203 16.2912 7.75203 14.8V14.4239ZM11.652 14.5H9.25203V14.8C9.25203 15.4627 9.78929 16 10.452 16C11.1148 16 11.652 15.4627 11.652 14.8V14.5ZM8.50045 13H12.5005L15.5235 12.6525C15.953 12.6032 16.0748 12.0369 15.7036 11.8153L15.6387 11.7766C15.5591 11.7291 15.4815 11.6793 15.4057 11.6273C15.2506 11.521 15.1036 11.4055 14.9651 11.2818C14.9405 11.2598 14.9162 11.2377 14.8922 11.2152C14.0144 10.395 13.5005 9.23833 13.5005 8.00969V7.5C13.5005 5.84315 12.1573 4.5 10.5005 4.5C8.8436 4.5 7.50045 5.84315 7.50045 7.5V8.00969C7.50045 9.23833 6.98651 10.395 6.10871 11.2152C6.08469 11.2377 6.06039 11.2598 6.03583 11.2818C5.89734 11.4055 5.75029 11.521 5.59523 11.6273C5.51945 11.6793 5.44176 11.7291 5.36222 11.7766L5.29729 11.8153C4.9261 12.0369 5.0479 12.6032 5.47739 12.6525L8.50045 13Z"
-        fill="#fff" />
-    </svg>
-    <div class="header__badge">
-      <span class="desktop header__badge--name">Davii Collections</span>
-      <span class="header__badge-avatar">DC</sp>
-    </div>
-    <!-- NOTIFICATION PANEL -->
-    <div class="notification-panel">
-      <div class="notification-panel__header">
-        <span>Alerts</span>
-        <div class="notification-panel__header-icons">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-            <path d="M3 6C3 5.58579 3.33579 5.25 3.75 5.25H16.25C16.6642 5.25 17 5.58579 17 6C17 6.41421 16.6642 6.75 16.25 6.75H3.75C3.33579 6.75 3 6.41421 3 6Z" fill="#616161"/>
-            <path d="M6.75 14C6.75 13.5858 7.08579 13.25 7.5 13.25H12.5C12.9142 13.25 13.25 13.5858 13.25 14C13.25 14.4142 12.9142 14.75 12.5 14.75H7.5C7.08579 14.75 6.75 14.4142 6.75 14Z" fill="#616161"/>
-            <path d="M5.5 9.25C5.08579 9.25 4.75 9.58579 4.75 10C4.75 10.4142 5.08579 10.75 5.5 10.75H14.5C14.9142 10.75 15.25 10.4142 15.25 10C15.25 9.58579 14.9142 9.25 14.5 9.25H5.5Z" fill="#616161"/>
-          </svg>
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-            <path d="M13.2803 9.03033C13.5732 8.73744 13.5732 8.26256 13.2803 7.96967C12.9874 7.67678 12.5126 7.67678 12.2197 7.96967L9.25 10.9393L8.03033 9.71967C7.73744 9.42678 7.26256 9.42678 6.96967 9.71967C6.67678 10.0126 6.67678 10.4874 6.96967 10.7803L8.71967 12.5303C9.01256 12.8232 9.48744 12.8232 9.78033 12.5303L13.2803 9.03033Z" fill="#616161"/>
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10ZM15.5 10C15.5 13.0376 13.0376 15.5 10 15.5C6.96243 15.5 4.5 13.0376 4.5 10C4.5 6.96243 6.96243 4.5 10 4.5C13.0376 4.5 15.5 6.96243 15.5 10Z" fill="#616161"/>
-          </svg>
-        </div>
-      </div>
-      <div class="notification-panel__alert-area">Alerts about your store and account will show here</div>
-    </div>
 
-    <!-- POPOVER MENU -->
-    <menu class="menu--closed">
-      <ul class="menu__first-list">
-        <li class="menu__badge">
-          <span class="menu__badge-avatar">DC</span>
-          <span class="menu__badge-name">Davii Collections</span>
-          <svg class="menu__badge-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-            <path d="M13.3332 4L5.99984 11.3333L2.6665 8" stroke="#303030" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </li>
-        <li>
+    <!-- notification panel control -->
+    <button id="notification-panel-control" class="notification-panel__control" aria-haspopup="true" aria-expanded="false" aria-controls="notification-panel" aria-label="notification-panel">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M7.25203 14.4239L4.8061 14.1427C2.95144 13.9295 2.42542 11.4844 4.02838 10.5274L4.0933 10.4886C4.966 9.96761 5.50045 9.02609 5.50045 8.00969V7.5C5.50045 5.01472 7.51517 3 10.0005 3C12.4857 3 14.5005 5.01472 14.5005 7.5V8.00969C14.5005 9.02609 15.0349 9.96761 15.9076 10.4886L15.9725 10.5274C17.5755 11.4844 17.0495 13.9295 15.1948 14.1427L12.652 14.435V14.8C12.652 16.2912 11.4432 17.5 9.95203 17.5C8.46086 17.5 7.25203 16.2912 7.25203 14.8V14.4239ZM11.152 14.5H8.75203V14.8C8.75203 15.4627 9.28929 16 9.95203 16C10.6148 16 11.152 15.4627 11.152 14.8V14.5ZM8.00045 13H12.0005L15.0235 12.6525C15.453 12.6032 15.5748 12.0369 15.2036 11.8153L15.1387 11.7766C15.0591 11.7291 14.9815 11.6793 14.9057 11.6273C14.7506 11.521 14.6036 11.4055 14.4651 11.2818C14.4405 11.2598 14.4162 11.2377 14.3922 11.2152C13.5144 10.395 13.0005 9.23833 13.0005 8.00969V7.5C13.0005 5.84315 11.6573 4.5 10.0005 4.5C8.3436 4.5 7.00045 5.84315 7.00045 7.5V8.00969C7.00045 9.23833 6.48651 10.395 5.60871 11.2152C5.58469 11.2377 5.56039 11.2598 5.53583 11.2818C5.39734 11.4055 5.25029 11.521 5.09523 11.6273C5.01945 11.6793 4.94176 11.7291 4.86222 11.7766L4.79729 11.8153C4.4261 12.0369 4.5479 12.6032 4.97739 12.6525L8.00045 13Z" fill="#E3E3E3"/>
+      </svg>
+    </button>
+
+    <!-- profile menu controls -->
+    <button id="profile-menu-control" class="profile-menu__control" aria-haspopup="true" aria-expanded="false" aria-controls="profile-menu" aria-label="profile-menu">
+      <span class="desktop profile-menu__control-name">Davii Collections</span>
+      <span class="profile-menu__control-avatar">DC</sp>
+    </button>
+  </div>
+  
+  <!-- NOTIFICATIONS PANEL -->
+  <div id="notification-panel" class="notification-panel menu--closed" role="menu" aria-label="notification-panel">
+    <div class="notification-panel__header">
+      <span>Alerts</span>
+      <div class="notification-panel__header-icons">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <path d="M3 6C3 5.58579 3.33579 5.25 3.75 5.25H16.25C16.6642 5.25 17 5.58579 17 6C17 6.41421 16.6642 6.75 16.25 6.75H3.75C3.33579 6.75 3 6.41421 3 6Z" fill="#616161"/>
+          <path d="M6.75 14C6.75 13.5858 7.08579 13.25 7.5 13.25H12.5C12.9142 13.25 13.25 13.5858 13.25 14C13.25 14.4142 12.9142 14.75 12.5 14.75H7.5C7.08579 14.75 6.75 14.4142 6.75 14Z" fill="#616161"/>
+          <path d="M5.5 9.25C5.08579 9.25 4.75 9.58579 4.75 10C4.75 10.4142 5.08579 10.75 5.5 10.75H14.5C14.9142 10.75 15.25 10.4142 15.25 10C15.25 9.58579 14.9142 9.25 14.5 9.25H5.5Z" fill="#616161"/>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <path d="M13.2803 9.03033C13.5732 8.73744 13.5732 8.26256 13.2803 7.96967C12.9874 7.67678 12.5126 7.67678 12.2197 7.96967L9.25 10.9393L8.03033 9.71967C7.73744 9.42678 7.26256 9.42678 6.96967 9.71967C6.67678 10.0126 6.67678 10.4874 6.96967 10.7803L8.71967 12.5303C9.01256 12.8232 9.48744 12.8232 9.78033 12.5303L13.2803 9.03033Z" fill="#616161"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10ZM15.5 10C15.5 13.0376 13.0376 15.5 10 15.5C6.96243 15.5 4.5 13.0376 4.5 10C4.5 6.96243 6.96243 4.5 10 4.5C13.0376 4.5 15.5 6.96243 15.5 10Z" fill="#616161"/>
+        </svg>
+      </div>
+    </div>
+    <div class="notification-panel__alert-area">Alerts about your store and account will show here</div>
+  </div>
+
+  <!-- PROFILE MENU -->
+  <menu id="profile-menu" class="menu--closed" role="menu" aria-label="profile-menu">
+    <ul class="menu__first-list">
+      <li class="menu__badge">
+        <span class="menu__badge-avatar">DC</span>
+        <span class="menu__badge-name">Davii Collections</span>
+        <svg class="menu__badge-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <path d="M13.3332 4L5.99984 11.3333L2.6665 8" stroke="#303030" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </li>
+      <li>
+        <button role="menuitem">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
             <path fill-rule="evenodd" clip-rule="evenodd" d="M13.257 3H6.74302C6.35944 3 5.9971 3.17611 5.76012 3.47772L3.37394 6.51468C3.13169 6.823 3 7.20375 3 7.59586V8.25C3 9.31867 3.60958 10.245 4.5 10.7001V15.25C4.5 16.2165 5.2835 17 6.25 17H13.75C14.7165 17 15.5 16.2165 15.5 15.25V10.7001C16.3904 10.245 17 9.31867 17 8.25V7.76879C17 7.26465 16.8307 6.77511 16.5192 6.3787L14.2399 3.47772C14.0029 3.17611 13.6406 3 13.257 3ZM13 15.5H13.75C13.8881 15.5 14 15.3881 14 15.25V11C13.212 11 12.5014 10.6686 12 10.1375C11.4986 10.6686 10.788 11 10 11C9.21199 11 8.50138 10.6686 8 10.1375C7.49862 10.6686 6.78801 11 6 11V15.25C6 15.3881 6.11193 15.5 6.25 15.5H10V13C10 12.4477 10.4477 12 11 12H12C12.5523 12 13 12.4477 13 13V15.5ZM6 9.5H5.75C5.05964 9.5 4.5 8.94036 4.5 8.25V7.59586C4.5 7.53985 4.51881 7.48545 4.55342 7.44141L6.86453 4.5H13.1355L15.3397 7.30543C15.4436 7.43757 15.5 7.60075 15.5 7.76879V8.25C15.5 8.94036 14.9404 9.5 14.25 9.5H14C13.3096 9.5 12.75 8.94036 12.75 8.25V7.75C12.75 7.33579 12.4142 7 12 7C11.5858 7 11.25 7.33579 11.25 7.75V8.25C11.25 8.94036 10.6904 9.5 10 9.5C9.30964 9.5 8.75 8.94036 8.75 8.25V7.75C8.75 7.33579 8.41421 7 8 7C7.58579 7 7.25 7.33579 7.25 7.75V8.25C7.25 8.94036 6.69036 9.5 6 9.5Z" fill="#303030"/>
           </svg>      
           <span>All stores</span>
-        </li>
-      </ul>
-      <div class="menu__divider"></div>
-      <ul class="menu__second-list"></ul>
-      <div class="menu__divider"></div>
-      <ul>
-        <li>David Michael</li>
-        <li>Manage Account</li>
-        <li>Log out</li>
-      </ul>
-    </menu>
-  </header>
+        </button>
+      </li>
+    </ul>
+    <div class="menu__divider"></div>
+    <ul class="menu__second-list">
+      <li><button role="menuitem">Help Center</button></li>
+      <li><button role="menuitem">Changelog</button></li>
+      <li><button role="menuitem">Community forums</button></li>
+      <li><button role="menuitem">Hire a Shopify Partner</button></li>
+      <li><button role="menuitem">Keyboard shortcuts</button></li>
+    </ul>
+    <div class="menu__divider"></div>
+    <ul class="menu__third-list">
+      <li>
+        <span class="menu__third-list-name">David Michael</span>
+        <span class="menu__third-list-email">davidmichael@gmail.com</span>
+      </li>
+      <li><button role="menuitem">Manage Account</button></li>
+      <li><button role="menuitem">Log out</button></li>
+    </ul>
+  </menu>
   
   <main>
-    <div class="plan-banner">
-      <div class="plan-banner__description">Extend your trial for $1/month for 3 months on select plans.</div>
-      <button>Select a plan</button>
-      <svg class="plan-banner__close-icon" width="24" height="24" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path
-          d="M14.4697 15.0303C14.7626 15.3232 15.2374 15.3232 15.5303 15.0303C15.8232 14.7374 15.8232 14.2626 15.5303 13.9697L11.5607 10L15.5303 6.03033C15.8232 5.73744 15.8232 5.26256 15.5303 4.96967C15.2374 4.67678 14.7626 4.67678 14.4697 4.96967L10.5 8.93934L6.53033 4.96967C6.23744 4.67678 5.76256 4.67678 5.46967 4.96967C5.17678 5.26256 5.17678 5.73744 5.46967 6.03033L9.43934 10L5.46967 13.9697C5.17678 14.2626 5.17678 14.7374 5.46967 15.0303C5.76256 15.3232 6.23744 15.3232 6.53033 15.0303L10.5 11.0607L14.4697 15.0303Z"
-          fill="#fff" />
-      </svg>
+    <!-- TRIAL CALLOUT BANNER -->
+    <div id="banner" class="trial-callout" role="menu" aria-label="banner">
+      <div class="trial-callout__description">Extend your trial for $1/month for 3 months on select plans.</div>
+      <button id="select-plan" class="trial-callout__select-button" aria-label="to select a plan, click this button, this button will redirect you to shopify.com/pricing">
+          Select a plan
+      </button>
+      <button id="banner-close-button" class="trial-callout__close-button" aria-haspopup="true" aria-expanded="true" aria-controls="banner" aria-label="select-trial-callout, click this button to close trial-callout banner">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <path d="M13.9697 15.0303C14.2626 15.3232 14.7374 15.3232 15.0303 15.0303C15.3232 14.7374 15.3232 14.2626 15.0303 13.9697L11.0607 10L15.0303 6.03033C15.3232 5.73744 15.3232 5.26256 15.0303 4.96967C14.7374 4.67678 14.2626 4.67678 13.9697 4.96967L10 8.93934L6.03033 4.96967C5.73744 4.67678 5.26256 4.67678 4.96967 4.96967C4.67678 5.26256 4.67678 5.73744 4.96967 6.03033L8.93934 10L4.96967 13.9697C4.67678 14.2626 4.67678 14.7374 4.96967 15.0303C5.26256 15.3232 5.73744 15.3232 6.03033 15.0303L10 11.0607L13.9697 15.0303Z" fill="#E3E3E3"/>
+        </svg>
+      </button>
     </div>
 
     <div class="setup-guide">
       <div class="setup-guide__header">
         <div>
-          <div class="setup-guide__header--title">Setup guide</div>
-          <div class="setup-guide__header--description">Use this personalized guide to get your store up and running.
+          <div>
+            <div class="setup-guide__header--title">Setup guide</div>
+            <div class="setup-guide__header--description">Use this personalized guide to get your store up and running.</div>
+          </div>
+          <div class="setup-progress">
+            <div class="setup-progress__label">
+              <span id="completed-number" class="setup-progress__completed-steps">0</span> / 5 completed
+            </div>
+            <div id="progress-bar" class="setup-progress__bar">
+              <div id="inner-progress-bar" class="setup-progress__bar--inner-bar"></div>
+            </div>
           </div>
         </div>
-        <svg class="setup-guide__toggle-icon" width="32" height="32" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd" clip-rule="evenodd"
-            d="M15.0303 12.2803C14.7374 12.5732 14.2626 12.5732 13.9697 12.2803L10.5 8.81066L7.03033 12.2803C6.73744 12.5732 6.26256 12.5732 5.96967 12.2803C5.67678 11.9874 5.67678 11.5126 5.96967 11.2197L9.96967 7.21967C10.2626 6.92678 10.7374 6.92678 11.0303 7.21967L15.0303 11.2197C15.3232 11.5126 15.3232 11.9874 15.0303 12.2803Z"
-            fill="#4A4A4A" />
-        </svg>
-      </div>
-      <div class="setup-progress">
-        <div class="setup-progress__label">
-          <span class="setup-progress__completed-steps">0</span> / 5 completed
-        </div>
-        <div class="setup-progress__bar">
-          <div class="setup-progress__bar--inner-bar"></div>
-        </div>
+        <button id="setup-guide-control" class="setup-guide__control" aria-haspopup="true" aria-expanded="true" aria-controls="setup-guide" aria-label="setup-guide"> 
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M14.5303 12.2803C14.2374 12.5732 13.7626 12.5732 13.4697 12.2803L10 8.81066L6.53033 12.2803C6.23744 12.5732 5.76256 12.5732 5.46967 12.2803C5.17678 11.9874 5.17678 11.5126 5.46967 11.2197L9.46967 7.21967C9.76256 6.92678 10.2374 6.92678 10.5303 7.21967L14.5303 11.2197C14.8232 11.5126 14.8232 11.9874 14.5303 12.2803Z" fill="#4A4A4A"/>
+          </svg>
+        </button>
       </div>
       
-      <ul class="setup-steps">
+      <ul id="setup-guide" class="setup-steps" role="menu" aria-label="setup-guide">
         <li class="setup-step">
-          <div class="setup-step__checkbox">
-            <label>
-              <input type='checkbox' />
-              <span>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="12" cy="12" r="10" stroke="#8A8A8A" stroke-width="2.08333" stroke-linecap="round"
-                    stroke-linejoin="round" stroke-dasharray="5 5" />
-                </svg>
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                  <circle cx="12" cy="12" r="10" stroke="#8A8A8A" stroke-width="2.08333" stroke-linecap="round"
-                    stroke-linejoin="round" />
-                </svg>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="12" cy="12" r="10" fill="#D9D9D9" stroke="#8A8A8A" stroke-width="2.08333"
-                    stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M22.0004 12C22.0004 13.9778 21.4139 15.9112 20.3151 17.5557C19.2162 19.2002 17.6545 20.4819 15.8272 21.2388C13.9999 21.9957 11.9893 22.1937 10.0495 21.8079C8.10965 21.422 6.32782 20.4696 4.9293 19.0711C3.53077 17.6725 2.57837 15.8907 2.19251 13.9509C1.80666 12.0111 2.00469 10.0004 2.76157 8.17317C3.51845 6.3459 4.80017 4.78412 6.44466 3.6853C8.08916 2.58649 10.0226 2 12.0004 2"
-                    stroke="#1C181D" stroke-width="2.08333" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M11.9996 2C13.9774 2 15.9108 2.58649 17.5553 3.6853C19.1998 4.78412 20.4816 6.3459 21.2384 8.17316C21.9953 10.0004 22.1933 12.0111 21.8075 13.9509C21.4216 15.8907 20.4692 17.6725 19.0707 19.0711C17.6722 20.4696 15.8903 21.422 13.9505 21.8079C12.0107 22.1937 10.0001 21.9957 8.1728 21.2388C6.34554 20.4819 4.78375 19.2002 3.68494 17.5557C2.58612 15.9112 1.99963 13.9778 1.99963 12"
-                    stroke="#1C181D" stroke-width="2.08333" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <ellipse opacity="0.6" cx="7.00008" cy="7.00004" rx="7.00008" ry="7.00004"
-                    transform="matrix(0.526082 -0.850434 0.850437 0.526077 2.36414 14.2701)" fill="#1C181D" stroke="#1C181D"
-                    stroke-width="1.45835" stroke-linecap="round" stroke-linejoin="round" />
-                  <g opacity="0.6">
-                    <path fill-rule="evenodd" clip-rule="evenodd"
-                      d="M11.7757 7.89535C12.0109 7.83993 12.2465 7.98566 12.3019 8.22085L13.5318 13.4402C13.5872 13.6754 13.4415 13.9109 13.2063 13.9663L10.5966 14.5813C10.3614 14.6367 10.1258 14.491 10.0704 14.2558C10.015 14.0206 10.1607 13.785 10.3959 13.7296L12.5798 13.215L11.4502 8.42154C11.3948 8.18635 11.5406 7.95077 11.7757 7.89535Z"
-                      fill="white" />
-                  </g>
-                </svg>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="11.9996" cy="12" r="10" fill="#1C181D" stroke="#1C181D" stroke-width="2.08333"
-                    stroke-linecap="round" stroke-linejoin="round" />
-                  <path fill-rule="evenodd" clip-rule="evenodd"
-                    d="M16.8163 8.64149C17.0604 8.88557 17.0604 9.2813 16.8163 9.52538L11.3997 14.942C11.1556 15.1861 10.7599 15.1861 10.5158 14.942L7.80745 12.2337C7.56337 11.9896 7.56337 11.5939 7.80745 11.3498C8.05153 11.1057 8.44725 11.1057 8.69133 11.3498L10.9577 13.6162L15.9324 8.64149C16.1765 8.39742 16.5723 8.39742 16.8163 8.64149Z"
-                    fill="white" />
-                </svg>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="11.9996" cy="12" r="10" fill="#1C181D" stroke="#1C181D" stroke-width="2.08333"
-                    stroke-linecap="round" stroke-linejoin="round" />
-                  <path fill-rule="evenodd" clip-rule="evenodd"
-                    d="M16.8162 8.64149C17.0603 8.88557 17.0603 9.2813 16.8162 9.52538L11.3995 14.942C11.1555 15.1861 10.7597 15.1861 10.5157 14.942L7.80733 12.2337C7.56325 11.9896 7.56325 11.5939 7.80733 11.3498C8.0514 11.1057 8.44713 11.1057 8.69121 11.3498L10.9576 13.6162L15.9323 8.64149C16.1764 8.39742 16.5721 8.39742 16.8162 8.64149Z"
-                    fill="white" />
-                </svg>
-              </span>
-            </label>
-          </div>
+          <label for="step-check-box">
+            <button id="checkbox-button" class="checkbox-button">
+              <input id="step-check-box" type="checkbox" />
+              <!-- dashed -->
+              <svg id="not-completed-icon" class="not-completed-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="12" r="10" stroke="#8A8A8A" stroke-width="2.08333" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="5 5"/>
+              </svg>
+              <!-- loading -->
+              <svg id="loading-spinner-icon" class="loading-spinner-icon hidden" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M22.0004 12C22.0004 13.9778 21.4139 15.9112 20.3151 17.5557C19.2162 19.2002 17.6545 20.4819 15.8272 21.2388C13.9999 21.9957 11.9893 22.1937 10.0495 21.8079C8.10965 21.422 6.32782 20.4696 4.9293 19.0711C3.53077 17.6725 2.57837 15.8907 2.19251 13.9509C1.80666 12.0111 2.00469 10.0004 2.76157 8.17317C3.51845 6.3459 4.80017 4.78412 6.44466 3.6853C8.08916 2.58649 10.0226 2 12.0004 2" stroke="#1C181D" stroke-width="2.08333" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <!-- checked -->
+              <svg id="completed-icon" class="completed-icon hidden" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="10" fill="#303030"></circle>
+                <path
+                  d="M17.2738 8.52629C17.6643 8.91682 17.6643 9.54998 17.2738 9.94051L11.4405 15.7738C11.05 16.1644 10.4168 16.1644 10.0263 15.7738L7.3596 13.1072C6.96908 12.7166 6.96908 12.0835 7.3596 11.693C7.75013 11.3024 8.38329 11.3024 8.77382 11.693L10.7334 13.6525L15.8596 8.52629C16.2501 8.13577 16.8833 8.13577 17.2738 8.52629Z"
+                  fill="#fff"
+                ></path>
+              </svg>
+            </button>
+          </label>
+          
           <div class="setup-step__description-container">
             <h4 class="setup-step__title">Customize your online store</h4>
             <div class="setup-step__description">
@@ -175,7 +183,7 @@
             </div>
             <div class="setup-step__button-container">
               <button class="setup-step__button">Customize theme</button>
-              <!-- <button class="setup-step__button2">Import Product</button> -->
+              <button class="setup-step__button2">Import Product</button>
             </div>
           </div>
           <img class="setup-step__image desktop" src="https://crushingit.tech/hackathon-assets/customise-store.png" alt=" " />
